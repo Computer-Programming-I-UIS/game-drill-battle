@@ -1,5 +1,5 @@
-int Tamx=18;
-int Tamy=10;
+int Tamx=27;
+int Tamy=15;
 PImage[][]Fond = new PImage[Tamx][Tamy];
 
 
@@ -12,7 +12,11 @@ for(int i=0; i<Tamx; i++){
 }
 
 void draw(){
-  scale(0.77);
+  if(keyPressed){
+  Fond[Tamx-1][Tamy-1]=loadImage("Roca.png");}
+  else
+  Fond[Tamx-1][Tamy-1]=loadImage("Tierra.png");
+  scale(0.52);
   {
    for(int i=0; i<Tamx;i++){
      for(int j=0; j<Tamy;j++){
