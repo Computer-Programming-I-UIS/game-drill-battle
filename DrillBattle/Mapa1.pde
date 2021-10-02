@@ -22,7 +22,7 @@ PImage[][]Fond = new PImage[Tamx][Tamy];
       Fond[Tamx-1][Tamy-1]= loadImage("EsquinaDerAbj.png");
   }
   
-  void original(){
+  void diseñar(){
     Fond[12][7] = loadImage("Roca2.png");
     Fond[13][7] = loadImage("Roca3.png");
     
@@ -68,6 +68,10 @@ PImage[][]Fond = new PImage[Tamx][Tamy];
     for(int x=3; x<8; x++){                        
       Fond[4][x] = loadImage("Roca"+int(random(1,7))+".png");} 
            
+   }
+   
+   void dibuj(){
+    pushMatrix();
     scale(0.52);      //0.52
     {
      for(int i=0; i<Tamx;i++){
@@ -76,5 +80,7 @@ PImage[][]Fond = new PImage[Tamx][Tamy];
         }
      }
     }
-  }
+    popMatrix();
+   }
+  
 }
