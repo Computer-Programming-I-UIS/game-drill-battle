@@ -2,11 +2,13 @@ class Mapa{
 int Tamx=27;
 int Tamy=15;
 PImage[][]Fond = new PImage[Tamx][Tamy];
+Boolean[][]via = new Boolean[Tamx][Tamy];
 
   Mapa(){
     for(int i=0; i<Tamx; i++){
-      for(int j=0; j<Tamy;j++)
+      for(int j=0; j<Tamy;j++){
        Fond[i][j]= loadImage("Tierra.png");
+       via[i][j]= true;}
      }
     for(int i=1;i<Tamx-1;i++){
       Fond[i][0]= loadImage("TierraArr.png");}
@@ -27,46 +29,60 @@ PImage[][]Fond = new PImage[Tamx][Tamy];
     Fond[13][7] = loadImage("Roca3.png");
     
     for(int x=1; x<14; x++){                      //Columna derecha mayor          //random(1,3)
-      Fond[24][x] = loadImage("Roca"+int(random(1,7))+".png");}
+      Fond[24][x] = loadImage("Roca"+int(random(1,7))+".png");
+      via[24][x]=false;}
     
     for(int x=23; x>18; x--){                     //Fila superior derecha
-      Fond[x][1] = loadImage("Roca"+int(random(1,7))+".png");}
+      Fond[x][1] = loadImage("Roca"+int(random(1,7))+".png");
+      via[x][1]=false;}
       
     for(int x=1; x<8; x++){                       //Columna arriba medio derecha
-      Fond[18][x] = loadImage("Roca"+int(random(1,7))+".png");}
+      Fond[18][x] = loadImage("Roca"+int(random(1,7))+".png");
+      via[18][x]=false;}
       
     for(int x=17; x>14; x--){                     //Fila derecha centro
-      Fond[x][7] = loadImage("Roca"+int(random(1,7))+".png");}
+      Fond[x][7] = loadImage("Roca"+int(random(1,7))+".png");
+      via[x][7]=false;}
     
     for(int x=24; x>19; x--){
-      Fond[x][7] = loadImage("Roca"+int(random(1,7))+".png");}
+      Fond[x][7] = loadImage("Roca"+int(random(1,7))+".png");
+      via[x][7]=false;}
       
     for(int x=7; x<12; x++){
-      Fond[21][x] = loadImage("Roca"+int(random(1,7))+".png");} 
+      Fond[21][x] = loadImage("Roca"+int(random(1,7))+".png");
+      via[21][x]=false;} 
       
      for(int x=10; x<16; x++){                    //Fila abajo centro
-      Fond[x][11] = loadImage("Roca"+int(random(1,7))+".png");} 
+      Fond[x][11] = loadImage("Roca"+int(random(1,7))+".png");
+      via[x][11]=false;} 
     
     for(int x=10; x<16; x++){                    //Fila arriba centro
-      Fond[x][3] = loadImage("Roca"+int(random(1,7))+".png");}
+      Fond[x][3] = loadImage("Roca"+int(random(1,7))+".png");
+      via[x][3]=false;}
       
     for(int x=1; x<14; x++){                      //Columna mayor izquierda
-      Fond[1][x] = loadImage("Roca"+int(random(1,7))+".png");}  
+      Fond[1][x] = loadImage("Roca"+int(random(1,7))+".png");
+      via[1][x]=false;}  
     
     for(int x=1; x<8; x++){                        //Fila abajo centro izquierda
-      Fond[x][13] = loadImage("Roca"+int(random(1,7))+".png");}
+      Fond[x][13] = loadImage("Roca"+int(random(1,7))+".png");
+      via[x][13]=false;}
       
     for(int x=7; x<14; x++){                        //Columna abajo centro izquierda
-      Fond[7][x] = loadImage("Roca"+int(random(1,7))+".png");}
+      Fond[7][x] = loadImage("Roca"+int(random(1,7))+".png");
+      via[7][x]=false;}
       
     for(int x=8; x<11; x++){                        //Fila izquierda centro
-      Fond[x][7] = loadImage("Roca"+int(random(1,7))+".png");}
+      Fond[x][7] = loadImage("Roca"+int(random(1,7))+".png");
+      via[x][7]=false;}
       
     for(int x=1; x<6; x++){                        //Fila centro izq centro  
-      Fond[x][7] = loadImage("Roca"+int(random(1,7))+".png");}
+      Fond[x][7] = loadImage("Roca"+int(random(1,7))+".png");
+      via[x][7]=false;}
       
     for(int x=3; x<8; x++){                        
-      Fond[4][x] = loadImage("Roca"+int(random(1,7))+".png");} 
+      Fond[4][x] = loadImage("Roca"+int(random(1,7))+".png");
+      via[4][x]=false;} 
            
    }
    
@@ -81,6 +97,12 @@ PImage[][]Fond = new PImage[Tamx][Tamy];
      }
     }
     popMatrix();
+    rect(52,52,52,52);
+   }
+   
+   void prueba(){
+      if(via[1][1] == true)
+        rect(100,100,100,100); 
    }
   
 }

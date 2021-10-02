@@ -6,12 +6,13 @@ fullScreen();
 inicial = new Mapa();
 inicial.diseñar();
 inicial.dibuj();
+//inicial.update();
 }
 
 void draw(){
-  
   drill1.movimiento();
   drill1.mostrar();
+  inicial.prueba();
 }
 
 void keyPressed() {
