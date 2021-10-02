@@ -3,7 +3,6 @@ Drill1 drill1 = new Drill1 ();
 
 void setup(){
 fullScreen();
-frameRate(10);
 inicial = new Mapa();
 inicial.diseñar();
 inicial.dibuj();

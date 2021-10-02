@@ -22,22 +22,34 @@ class Drill1 {
     
     if (derecha) {
       inicial.dibuj();
+      pushMatrix();
+      scale(0.85);
       image (Drill1, x, y);
+      popMatrix();
       x= x + 10;
     }
     if (izquierda) {
       inicial.dibuj();
+      pushMatrix();
+      scale(0.85);
       image (Drill4, x, y);
+      popMatrix();
       x= x - 10;
     }
     if (arriba) {
       inicial.dibuj();
+      pushMatrix();
+      scale(0.85);
       image (Drill3, x, y);
+      popMatrix();
       y= y - 10;
     }
     if (abajo) {
       inicial.dibuj();
+      pushMatrix();
+      scale(0.85);
       image (Drill2, x, y);
+      popMatrix();
       y= y + 10;
     }
     
