@@ -8,6 +8,18 @@ PImage[][]Fond = new PImage[Tamx][Tamy];
       for(int j=0; j<Tamy;j++)
        Fond[i][j]= loadImage("Tierra.png");
      }
+    for(int i=1;i<Tamx-1;i++){
+      Fond[i][0]= loadImage("TierraArr.png");}
+    for(int i=1;i<Tamy-1; i++){
+      Fond[0][i]= loadImage("TierraIzq.png");}
+    for(int i=1;i<Tamy-1; i++){
+      Fond[Tamx-1][i]= loadImage("TierraDer.png");}  
+    for(int i=1;i<Tamx-1; i++){
+      Fond[i][Tamy-1]= loadImage("TierraAbaj.png");}
+      Fond[0][0]= loadImage("EsquinaIzqArr.png");
+      Fond[0][Tamy-1]= loadImage("EsquinaIzqAbj.png");
+      Fond[Tamx-1][0]= loadImage("EsquinaDerArr.png");
+      Fond[Tamx-1][Tamy-1]= loadImage("EsquinaDerAbj.png");
   }
   
   void original(){
