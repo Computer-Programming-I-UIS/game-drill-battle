@@ -1,10 +1,9 @@
 class Drill1 {
-  int x = 38;
-  int y = 64;
-  int limder1=x+1406;
-  int limiz1=x;
-  int limsu1=y-15;
-  int limin1=y+710;
+
+  float limder1=x+1248;
+  float limiz1=x+58;
+  float limsu1=y+58;
+  float limin1=y+677;
   boolean derecha = false;
   boolean izquierda = false;
   boolean arriba = false;
@@ -14,7 +13,7 @@ class Drill1 {
   PImage Drill3;
   PImage Drill4;
  
-
+  
   void mostrar() {
     Drill1 = loadImage ("Drill 1.png");
     Drill2 = loadImage ("Drill 2.png");
@@ -23,41 +22,30 @@ class Drill1 {
     
   }
   void movimiento() {
+    
     if(x<limder1){
     if (derecha){
       inicial.dibuj();
-      pushMatrix();
-      scale(0.85);
       image (Drill1, x, y);
-      popMatrix();
-      x= x + 10;
+      x= x + 5;
     }}
     if(x>limiz1){
     if (izquierda) {
       inicial.dibuj();
-      pushMatrix();
-      scale(0.85);
       image (Drill4, x, y);
-      popMatrix();
-      x= x - 10;
+      x= x - 5;
     }}
     if(y>limsu1){
     if (arriba) {
       inicial.dibuj();
-      pushMatrix();
-      scale(0.85);
       image (Drill3, x, y);
-      popMatrix();
-      y= y - 10;
+      y= y - 5;
     }}
     if(y<limin1){
     if (abajo) {
       inicial.dibuj();
-      pushMatrix();
-      scale(0.85);
       image (Drill2, x, y);
-      popMatrix();
-      y= y + 10;
+      y= y + 5;
     }}
     
   }
@@ -90,5 +78,9 @@ void teclaSoltada (int code) {
     abajo=false;
   }
 
+}
+
+void hitbox(){
+    rect(x,y,46,44);
 }
 }
