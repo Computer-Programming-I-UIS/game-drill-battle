@@ -81,6 +81,8 @@ void teclaSoltada (int code) {
 }
 
 void hitbox(){
-    rect(x,y,46,44);
+  fill(255,0,0,0);
+  //noStroke();
+  rect(x,y,46,44);
 }
 }

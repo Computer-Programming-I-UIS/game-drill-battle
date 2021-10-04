@@ -1,26 +1,27 @@
 class Limites{
  
   void colision(){
-    if(x > (posx[3][2]+52)){
-     contacto=false;
-     }
-    else if((x+46) < posx[3][2]){
-      contacto=false;
-     }
-    else if(y > (posy[3][2]+52)){
-      contacto=false; 
-     }
-    else if((y+44) < posy[3][2]){
-      contacto=false;
-     }
-    else
-      contacto=true;
+
+     if(via[1][2]==0){
+      if(x > (posx[1][2]+52)){
+       contacto=0;
+       }
+      else if((x+46) < posx[1][2]){
+        contacto=0;
+       }
+      else if(y > (posy[1][2]+52)){
+        contacto=0; 
+       }
+      else if((y+44) < posy[1][2]){
+        contacto=0;
+       }
+      else
+        contacto=2;
+    }
   }
   
   void prueba(){ 
-   if(contacto)
-   rect(500,500,100,100);
-   else
-   rect(200,500,100,100);  
+   if(contacto == 2){
+   x=x-4;}
   }
 }

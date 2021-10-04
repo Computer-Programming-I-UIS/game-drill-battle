@@ -2,7 +2,7 @@ class Mapa{
 int Tamx=27;
 int Tamy=15;
 PImage[][]Fond = new PImage[Tamx][Tamy];
-int[][]via = new int[Tamx][Tamy];
+
 int[][] borde3 = new int[Tamx][Tamy];                //Borde abajo derecha
 int[][] borde4 = new int[Tamx][Tamy];                //Borde abajo izquierda
 
@@ -102,7 +102,7 @@ int[][] borde4 = new int[Tamx][Tamy];                //Borde abajo izquierda
      }
     }
     popMatrix();
-    //rect(52,52,52,52);
+    //rect(via[5][1],52,100,100);
    }
    
    void hitbox(){

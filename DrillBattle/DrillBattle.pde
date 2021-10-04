@@ -8,7 +8,9 @@ int[][] posy = new int[27][15];                        //Pos y de los cuadrados 
   float x = 54;
   float y = 58;
   
-boolean contacto;  
+int[][]via = new int[27][15];  
+  
+int contacto;  
 
 void setup(){
 fullScreen();
@@ -20,17 +22,20 @@ inicial.dibuj();
 }
 
 void draw(){
-  drill1.movimiento();
-  drill1.mostrar();
   drill1.hitbox();
   inicial.hitbox();
+  drill1.movimiento();
+  drill1.mostrar();
   mapa.prueba();
   mapa.colision();
 }
 
 void keyPressed() {
   drill1.teclaPresionada(keyCode);
-
+  drill1.hitbox();
+  inicial.hitbox();
+  mapa.prueba();
+  mapa.colision();
 
 }
 
