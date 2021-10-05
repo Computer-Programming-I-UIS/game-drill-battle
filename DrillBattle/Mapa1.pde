@@ -3,17 +3,15 @@ int Tamx=27;
 int Tamy=15;
 PImage[][]Fond = new PImage[Tamx][Tamy];
 
-int[][] borde3 = new int[Tamx][Tamy];                //Borde abajo derecha
-int[][] borde4 = new int[Tamx][Tamy];                //Borde abajo izquierda
-
-//via==0 roca/objeto destruido
-//via==1 tierra/objeto no destruido
+ 
+//via==true roca/ objeto destruido/ Caminar
+//via==false tierra/ objeto no destruido/ No caminar
 
   Mapa(){
     for(int i=0; i<Tamx; i++){
       for(int j=0; j<Tamy;j++){
        Fond[i][j]= loadImage("Tierra.png");
-       via[i][j]= 1;}
+       via[i][j]= false;}
      }
     for(int i=1;i<Tamx-1;i++){
       Fond[i][0]= loadImage("TierraArr.png");}
@@ -31,63 +29,77 @@ int[][] borde4 = new int[Tamx][Tamy];                //Borde abajo izquierda
   
   void diseñar(){
     Fond[12][7] = loadImage("Roca2.png");
+    via[12][7] = true;
     Fond[13][7] = loadImage("Roca3.png");
+    via[13][7] = true;
+    
+    for(int x=0; x<Tamx;x++){
+      via[x][0]=false;}
+    
+    for(int x=0; x<Tamx;x++){
+      via[x][14]=false;}
+      
+    for(int x=0; x<Tamy;x++){
+      via[0][x]=false;}
+      
+    for(int x=0; x<Tamy;x++){
+      via[26][x]=false;}  
     
     for(int x=1; x<14; x++){                      //Columna derecha mayor          //random(1,3)
       Fond[24][x] = loadImage("Roca"+int(random(1,7))+".png");
-      via[24][x]=0;}
+      via[24][x]=true;}
     
     for(int x=23; x>18; x--){                     //Fila superior derecha
       Fond[x][1] = loadImage("Roca"+int(random(1,7))+".png");
-      via[x][1]=0;}
+      via[x][1]=true;}
       
     for(int x=1; x<8; x++){                       //Columna arriba medio derecha
       Fond[18][x] = loadImage("Roca"+int(random(1,7))+".png");
-      via[18][x]=0;}
+      via[18][x]=true;}
       
     for(int x=17; x>14; x--){                     //Fila derecha centro
       Fond[x][7] = loadImage("Roca"+int(random(1,7))+".png");
-      via[x][7]=0;}
+      via[x][7]=true;}
     
     for(int x=24; x>19; x--){
       Fond[x][7] = loadImage("Roca"+int(random(1,7))+".png");
-      via[x][7]=0;}
+      via[x][7]=true;}
       
     for(int x=7; x<12; x++){
       Fond[21][x] = loadImage("Roca"+int(random(1,7))+".png");
-      via[21][x]=0;} 
+      via[21][x]=true;} 
       
      for(int x=10; x<16; x++){                    //Fila abajo centro
       Fond[x][11] = loadImage("Roca"+int(random(1,7))+".png");
-      via[x][11]=0;} 
+      via[x][11]=true;} 
     
     for(int x=10; x<16; x++){                    //Fila arriba centro
       Fond[x][3] = loadImage("Roca"+int(random(1,7))+".png");
-      via[x][3]=0;}
+      via[x][3]=true;}
       
     for(int x=1; x<14; x++){                      //Columna mayor izquierda
       Fond[1][x] = loadImage("Roca"+int(random(1,7))+".png");
-      via[1][x]=0;}  
+      via[1][x]=true;}  
     
     for(int x=1; x<8; x++){                        //Fila abajo centro izquierda
       Fond[x][13] = loadImage("Roca"+int(random(1,7))+".png");
-      via[x][13]=0;}
+      via[x][13]=true;}
       
     for(int x=7; x<14; x++){                        //Columna abajo centro izquierda
       Fond[7][x] = loadImage("Roca"+int(random(1,7))+".png");
-      via[7][x]=0;}
+      via[7][x]=true;}
       
     for(int x=8; x<11; x++){                        //Fila izquierda centro
       Fond[x][7] = loadImage("Roca"+int(random(1,7))+".png");
-      via[x][7]=0;}
+      via[x][7]=true;}
       
     for(int x=1; x<6; x++){                        //Fila centro izq centro  
       Fond[x][7] = loadImage("Roca"+int(random(1,7))+".png");
-      via[x][7]=0;}
+      via[x][7]=true;}
       
     for(int x=3; x<8; x++){                        
       Fond[4][x] = loadImage("Roca"+int(random(1,7))+".png");
-      via[4][x]=0;} 
+      via[4][x]=true;} 
            
    }
    
@@ -108,11 +120,11 @@ int[][] borde4 = new int[Tamx][Tamy];                //Borde abajo izquierda
    void hitbox(){
      for(int i=0; i<Tamx; i++){ 
       for(int j=0; j<Tamy; j++){
-       if(via[i][j] == 1)
+       if(via[i][j] == true)
           rect(i*52,j*52,52,52);
-          posx[i][j] = j*52;
-          posy[i][j] = i*52;}
+          posx[i][j] = i*52;
+          posy[i][j] = j*52;}
      }
    }
-  
+   
 }

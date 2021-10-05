@@ -22,33 +22,78 @@ class Drill1 {
     
   }
   void movimiento() {
-    
-    if(x<limder1){
-    if (derecha){
-      inicial.dibuj();
-      image (Drill1, x, y);
-      x= x + 5;
-    }}
-    if(x>limiz1){
-    if (izquierda) {
-      inicial.dibuj();
-      image (Drill4, x, y);
-      x= x - 5;
-    }}
-    if(y>limsu1){
-    if (arriba) {
-      inicial.dibuj();
-      image (Drill3, x, y);
-      y= y - 5;
-    }}
-    if(y<limin1){
-    if (abajo) {
-      inicial.dibuj();
-      image (Drill2, x, y);
-      y= y + 5;
-    }}
-    
+    if(keyPressed)
+    switch(keyCode){
+       case SHIFT:
+       {
+        inicial.dibuj();
+        image (Drill1, x, y);
+        mapa.estado_der();
+        mapa.estado_abj();
+        mapa.estado_izq();
+        mapa.estado_arri();
+        break;
+       }
+       case RIGHT:
+       {
+        if(movder==true && x<limder1){
+          a=a+1;
+          mapa.estado_der();
+          mapa.estado_abj();
+          mapa.estado_izq();
+          mapa.estado_arri();
+          inicial.dibuj();
+          x= x + 52;
+          image (Drill1, x, y);
+          delay(100);
+          break;}
+       }
+       case DOWN:
+       {
+         if(movabj==true && y<limin1){
+          b=b+1;
+          mapa.estado_der();
+          mapa.estado_abj();
+          mapa.estado_izq();
+          mapa.estado_arri();
+          inicial.dibuj();
+          y= y + 52;
+          image (Drill2, x, y);
+          delay(100);  
+          break;}
+       }
+       case LEFT:
+       {
+         if(movizq==true && x>limiz1){
+          a=a-1;
+          mapa.estado_izq();
+          mapa.estado_abj();
+          mapa.estado_der();
+          mapa.estado_arri();
+          inicial.dibuj();
+          x= x - 52;
+          image (Drill4, x, y);
+          delay(100);
+          break;} 
+       }
+       case UP:
+       {
+         if(movarri==true && y>limsu1){
+          b=b-1;
+          mapa.estado_arri();
+          mapa.estado_abj();
+          mapa.estado_izq();
+          mapa.estado_der();
+          inicial.dibuj();
+          y= y - 52;
+          image (Drill3, x, y);
+          delay(100);
+          break;} 
+       }
+    }
   }
+
+ //Probablemente no utilizar 
   void teclaPresionada (int code) {
     if (code == 39 ) {  
       derecha=true;
@@ -82,7 +127,7 @@ void teclaSoltada (int code) {
 
 void hitbox(){
   fill(255,0,0,0);
-  //noStroke();
+  noStroke();
   rect(x,y,46,44);
 }
 }

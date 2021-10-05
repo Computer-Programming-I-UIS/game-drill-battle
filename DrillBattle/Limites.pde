@@ -1,27 +1,35 @@
 class Limites{
- 
-  void colision(){
-
-     if(via[1][2]==0){
-      if(x > (posx[1][2]+52)){
-       contacto=0;
-       }
-      else if((x+46) < posx[1][2]){
-        contacto=0;
-       }
-      else if(y > (posy[1][2]+52)){
-        contacto=0; 
-       }
-      else if((y+44) < posy[1][2]){
-        contacto=0;
-       }
-      else
-        contacto=2;
-    }
+//Probando los valores cercanos  
+  void prueba(){ 
+   if(mouseButton==LEFT)
+   print(via[a+1][b]);
+   else
+   print();
   }
   
-  void prueba(){ 
-   if(contacto == 2){
-   x=x-4;}
+  
+  void estado_der(){
+   if(via[a+1][b]==true)
+     movder=true;
+   else
+     movder=false;
   }
+  void estado_izq(){
+   if(via[a-1][b]==true)
+     movizq=true;
+   else
+     movizq=false;
+  }
+  void estado_arri(){
+   if(via[a][b-1]==true)
+     movarri=true;
+   else
+     movarri=false;
+  }
+  void estado_abj(){
+   if(via[a][b+1]==true)
+     movabj=true;
+   else
+     movabj=false; 
+   }
 }
