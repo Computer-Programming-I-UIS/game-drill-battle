@@ -120,11 +120,19 @@ PImage[][]Fond = new PImage[Tamx][Tamy];
    void hitbox(){
      for(int i=0; i<Tamx; i++){ 
       for(int j=0; j<Tamy; j++){
-       if(via[i][j] == true)
+       if(via[i][j] == true || via[i][j] == false)
           rect(i*52,j*52,52,52);
           posx[i][j] = i*52;
           posy[i][j] = j*52;}
      }
    }
    
+   void generar(){
+    if(destruir == true){
+      via[a][b] = true;
+      Fond[a][b] = loadImage("Roca1.png");
+    }
+    else
+      destruir=false;
+   }
 }

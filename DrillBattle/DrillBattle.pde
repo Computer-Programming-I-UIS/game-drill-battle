@@ -1,6 +1,10 @@
 Mapa inicial;
 Drill1 drill1 = new Drill1 ();
 Limites mapa = new Limites();
+Gas objeto1= new Gas(208, 156, 4, 3);
+Gas objeto2= new Gas(364, 676, 7, 13);
+
+PImage gas2;
 
 int[][] posx = new int[27][15];                        //Pos x de los cuadrados de hitbox 
 int[][] posy = new int[27][15];                        //Pos y de los cuadrados de hitbox
@@ -13,6 +17,8 @@ boolean movabj=false;
 boolean movder=false;
 boolean movizq=false;
 
+boolean destruir=false;
+
   float x = 54;
   float y = 56;
   
@@ -22,6 +28,7 @@ int contacto;
 
 void setup(){
 fullScreen();
+gas2 = loadImage("SeekPng.com_esfera-png_2205701.png");
 inicial = new Mapa();
 inicial.diseñar();
 inicial.dibuj();
@@ -36,7 +43,13 @@ void draw(){
   mapa.estado_izq();
   mapa.estado_arri();
   drill1.movimiento();
-
+  objeto1.lugar();
+  objeto1.obtener();
+  objeto1.desact();
+  objeto2.lugar();
+  objeto2.obtener();
+  objeto2.desact();
+  inicial.generar();
 
   
 }

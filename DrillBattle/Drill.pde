@@ -36,7 +36,7 @@ class Drill1 {
        }
        case RIGHT:
        {
-        if(movder==true && x<limder1){
+        if(movder==true && x<limder1 || destruir==true && x<limder1){
           a=a+1;
           mapa.estado_der();
           mapa.estado_abj();
@@ -50,7 +50,7 @@ class Drill1 {
        }
        case DOWN:
        {
-         if(movabj==true && y<limin1){
+         if(movabj==true && y<limin1  || destruir==true && y<limin1){
           b=b+1;
           mapa.estado_der();
           mapa.estado_abj();
@@ -64,7 +64,7 @@ class Drill1 {
        }
        case LEFT:
        {
-         if(movizq==true && x>limiz1){
+         if(movizq==true && x>limiz1 || destruir==true && x>limiz1 ){
           a=a-1;
           mapa.estado_izq();
           mapa.estado_abj();
@@ -78,7 +78,7 @@ class Drill1 {
        }
        case UP:
        {
-         if(movarri==true && y>limsu1){
+         if(movarri==true && y>limsu1 || destruir==true && y>limsu1){
           b=b-1;
           mapa.estado_arri();
           mapa.estado_abj();
