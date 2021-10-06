@@ -1,8 +1,16 @@
+import ddf.minim.*;
+Minim minim;
+AudioPlayer player;
+AudioPlayer player2;
+AudioPlayer player3;
+
+String gameState;
+
 Mapa inicial;
 Drill1 drill1 = new Drill1 ();
 Limites mapa = new Limites();
-Gas objeto1= new Gas(208, 156, 4, 3);
-Gas objeto2= new Gas(364, 676, 7, 13);
+Gas objeto1 = new Gas(208, 156, 4, 3);
+Gas objeto2 = new Gas(364, 676, 7, 13);
 
 PImage gas2;
 
@@ -28,14 +36,48 @@ int contacto;
 
 void setup(){
 fullScreen();
+gameState = "START";
+minim = new Minim (this);
+player = minim.loadFile ("Theme-1.wav");
+player2 = minim.loadFile ("Theme-2.wav");
+player3 = minim.loadFile ("Theme-3.wav");
 gas2 = loadImage("SeekPng.com_esfera-png_2205701.png");
 inicial = new Mapa();
 inicial.diseñar();
 inicial.dibuj();
 drill1.mostrar();
+background(0);
 }
 
 void draw(){
+  if (gameState == "START") {
+    startGame ();
+  } else if (gameState == "PLAY") {
+    playGame ();
+  } else if (gameState == "WIN") {
+    winGame();
+  }
+  
+}
+
+void startGame () {
+  player.play();
+  textAlign (CENTER);
+  textSize (18);
+  fill (255);
+  text ("¡Haz click donde sea para jugar!", width/2, height/2);
+  textSize (14);
+  fill (255);
+  text ("Derrota a tu oponente para ganar", width/2, height/2 + 30 );
+  if (mousePressed == true) {
+    gameState = "PLAY";
+    player.pause();
+    inicial.dibuj();
+  }
+}
+
+void playGame () {
+  player2.play();
   drill1.hitbox();
   inicial.hitbox();
   mapa.estado_abj();
@@ -50,8 +92,10 @@ void draw(){
   objeto2.obtener();
   objeto2.desact();
   inicial.generar();
+}
 
-  
+void winGame () {
+  player3.play();
 }
 
 void keyPressed() {
