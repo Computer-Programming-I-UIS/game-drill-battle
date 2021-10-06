@@ -8,6 +8,7 @@ String gameState;
 
 Mapa inicial;
 Drill1 drill1 = new Drill1 ();
+Drill2 drill2 = new Drill2();
 Limites mapa = new Limites();
 Gas objeto1 = new Gas(208, 156, 4, 3);
 Gas objeto2 = new Gas(364, 676, 7, 13);
@@ -25,10 +26,21 @@ boolean movabj=false;
 boolean movder=false;
 boolean movizq=false;
 
+boolean movarri2=false;
+boolean movabj2=false;
+boolean movder2=false;
+boolean movizq2=false;
+
 boolean destruir=false;
 
   float x = 54;
   float y = 56;
+  
+  float x2=1248;
+  float y2=676;
+  
+  int c=24;
+  int d=13;
   
 boolean[][]via = new boolean[27][15];  
   
@@ -46,6 +58,7 @@ inicial = new Mapa();
 inicial.diseñar();
 inicial.dibuj();
 drill1.mostrar();
+drill2.mostrar();
 background(0);
 }
 
@@ -85,6 +98,7 @@ void playGame () {
   mapa.estado_izq();
   mapa.estado_arri();
   drill1.movimiento();
+  drill2.movimiento();
   objeto1.lugar();
   objeto1.obtener();
   objeto1.desact();
