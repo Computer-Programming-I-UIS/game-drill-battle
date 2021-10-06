@@ -4,10 +4,17 @@ class Drill1 {
   float limiz1=x+58;
   float limsu1=y+58;
   float limin1=y+677;
+  
   boolean derecha = false;
   boolean izquierda = false;
   boolean arriba = false;
   boolean abajo = false;
+  
+  boolean posd;
+  boolean posi;
+  boolean posar;
+  boolean posab;
+  
   PImage Drill1;
   PImage Drill2;
   PImage Drill3;
@@ -43,6 +50,10 @@ class Drill1 {
           mapa.estado_izq();
           mapa.estado_arri();
           inicial.dibuj();
+          posd=true;
+          posi=false;
+          posar=false;
+          posab=false;
           x= x + 52;
           image (Drill1, x, y);
           delay(100);
@@ -57,6 +68,10 @@ class Drill1 {
           mapa.estado_izq();
           mapa.estado_arri();
           inicial.dibuj();
+          posd=false;
+          posi=false;
+          posar=false;
+          posab=true;
           y= y + 52;
           image (Drill2, x, y);
           delay(100);  
@@ -71,6 +86,10 @@ class Drill1 {
           mapa.estado_der();
           mapa.estado_arri();
           inicial.dibuj();
+          posd=false;
+          posi=true;
+          posar=false;
+          posab=false;
           x= x - 52;
           image (Drill4, x, y);
           delay(100);
@@ -85,6 +104,10 @@ class Drill1 {
           mapa.estado_izq();
           mapa.estado_der();
           inicial.dibuj();
+          posd=false;
+          posi=false;
+          posar=true;
+          posab=false;
           y= y - 52;
           image (Drill3, x, y);
           delay(100);
@@ -123,6 +146,26 @@ void teclaSoltada (int code) {
     abajo=false;
   }
 
+}
+
+void dibujar(){
+  if(posd==true)
+  {
+    image (Drill1, x, y);
+  }
+  else if(posi==true){
+    image(Drill4, x, y); 
+  }
+  if(posar==true)
+  {
+    image (Drill3, x, y);
+  }
+  else if(posab==true){
+    image(Drill2, x, y); 
+  }
+//  else{
+//    image (Drill1, x, y);
+//  }
 }
 
 void hitbox(){

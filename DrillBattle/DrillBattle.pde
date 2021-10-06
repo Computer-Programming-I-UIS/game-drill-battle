@@ -98,7 +98,10 @@ void playGame () {
   mapa.estado_izq();
   mapa.estado_arri();
   drill1.movimiento();
+  drill1.dibujar();
   drill2.movimiento();
+  drill2.dibujar();
+  drill1.dibujar();
   objeto1.lugar();
   objeto1.obtener();
   objeto1.desact();
