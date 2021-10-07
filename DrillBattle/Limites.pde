@@ -11,6 +11,7 @@ class Limites{
   
  ///////////////////////////////////////////// 
   
+  //Evaluador de estado (si es posible o no el movimiento) de las casillas adyacentes
   void estado_der(){
    if(via[a+1][b]==true)
      movder=true;

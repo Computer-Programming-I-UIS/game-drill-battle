@@ -1,4 +1,14 @@
+/*********************************
 
+Autores: Jose Félix Algarín Cotes
+         Christian Camilo Ellis Jiménez
+
+
+
+DrillBattle:  Juego basado en la idea de Digger (1983) pero adaptado en el enfoque pvp
+              en el que se tiene que disputar el mayor domino del territorio posible,
+              el jugador que primero alcance 150 puntos resultará como vencedor.
+********************************/
 //Creacion de datos de sonido
 import ddf.minim.*;
 Minim minim;
@@ -164,8 +174,8 @@ void winGame () {
   player3.play();
   background(0);
 }
-
-void keyPressed() {
+//Funciones de controles
+void keyPressed() {  
   drill1.teclaPresionada(keyCode);
   drill2.teclaPresionada2();
   drill1.hitbox();

@@ -1,5 +1,5 @@
 class Drill2{
-
+//Mismo tratamiento al drill1
   float limder2=950;
   float limiz2=52;
   float limsu2=y2+58;

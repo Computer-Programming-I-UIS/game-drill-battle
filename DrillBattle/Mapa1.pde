@@ -7,6 +7,8 @@ PImage[][]Fond = new PImage[Tamx][Tamy];
 //via==true roca/ objeto destruido/ Caminar
 //via==false tierra/ objeto no destruido/ No caminar
 
+
+//Generador de mapa
   Mapa(){
     for(int i=0; i<Tamx; i++){
       for(int j=0; j<Tamy;j++){
@@ -26,7 +28,8 @@ PImage[][]Fond = new PImage[Tamx][Tamy];
       Fond[Tamx-1][0]= loadImage("EsquinaDerArr.png");
       Fond[Tamx-1][Tamy-1]= loadImage("EsquinaDerAbj.png");
   }
-  
+ 
+  //Asignador de bloques de movimiento iniciales
   void diseñar(){
     Fond[12][7] = loadImage("Roca2.png");
     via[12][7] = true;
@@ -103,6 +106,7 @@ PImage[][]Fond = new PImage[Tamx][Tamy];
            
    }
    
+   //Dibujo de mapa
    void dibuj(){
     pushMatrix();
     scale(0.40);  //0.52
@@ -114,9 +118,9 @@ PImage[][]Fond = new PImage[Tamx][Tamy];
      }
     }
     popMatrix();
-    //rect(via[5][1],52,100,100);
    }
    
+//Cuadriculación del mapa   
    void hitbox(){
      for(int i=0; i<Tamx; i++){ 
       for(int j=0; j<Tamy; j++){
@@ -126,7 +130,8 @@ PImage[][]Fond = new PImage[Tamx][Tamy];
           posy[i][j] = j*40;}
      }
    }
-   
+
+//Destrucción del mapa
    void generar(){
     if(destruir == true){
       via[a][b] = true;
@@ -144,7 +149,8 @@ PImage[][]Fond = new PImage[Tamx][Tamy];
     else
       destruir2=false;
    }
-   
+
+   //Finalizador de la partida al alcanzar los 150 puntos
    void terminar(){
     if(puntos1==150 || puntos2==150){
      gameState= "WIN"; 
@@ -152,12 +158,4 @@ PImage[][]Fond = new PImage[Tamx][Tamy];
    }
 
    
-  // void terminar(){
-  //  if(via[1][1]==true  && via[1][2]==true && via[1][3]==true && via[1][4]==true && via[1][5]==true && via[1][6]==true && via[1][7]==true && via[1][8]==true && via[1][9]==true && via[1][10]==true && via[1][11]==true && via[1][12]==true && via[1][13]==true && 
-  //  via[2][1]==true  && via[2][2]==true && via[2][3]==true && via[2][4]==true && via[2][5]==true && via[2][6]==true && via[2][7]==true && via[2][8]==true && via[2][9]==true && via[2][10]==true && via[2][11]==true && via[2][12]==true && via[2][13]==true && 
-  //  via[3][1]==true  && via[3][2]==true && via[3][3]==true && via[3][4]==true && via[3][5]==true && via[3][6]==true && via[3][7]==true && via[3][8]==true && via[3][9]==true && via[3][10]==true && via[3][11]==true && via[3][12]==true && via[3][13]==true &&
-  //  
-  //  via[24][13]==true)
-
-  //}
 }

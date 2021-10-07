@@ -11,6 +11,7 @@ int tiempodehabilidad = 10000;
 
 boolean recolectado;
 
+
   Gas(int ubicx, int ubicy, int posa, int posb, int tipo){
     sitiox=ubicx;
     sitioy=ubicy;
@@ -19,7 +20,7 @@ boolean recolectado;
     clase=tipo;
     tiempo = millis();
   }
-  
+//Ubicación de los objetos gasolina  
   void lugar(){
     
     if(recolectado == false && clase==1)
@@ -32,7 +33,8 @@ boolean recolectado;
       image(gas2ver, sitiox, sitioy); 
     }
   }
-  
+
+//Función de obtención en base a las casillas de control de los taladros  
   void obtener(){
     if(recolectado == false){
       if(a==xvia && b==yvia){
@@ -51,7 +53,7 @@ boolean recolectado;
     }
   }
   
-  
+//Desactivación de la habilidad después de cierto tiempo (destruir el mapa)  
   void desact(){
     if(recolectado == true){
      int tiempopasado = millis() - tiempo;

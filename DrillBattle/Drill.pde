@@ -1,20 +1,23 @@
 class Drill1 {
-
+  //Limites de movimientos
   float limder1=x+950;
   float limiz1=x+58;
   float limsu1=y+58;
   float limin1=y+500;
   
+  //Boolean para activar el movimiento
   boolean derecha = false;
   boolean izquierda = false;
   boolean arriba = false;
   boolean abajo = false;
   
+  //Boolean que va variando en función de si el movimiento es posible o no en las casillas adyacentes a la posición
   boolean posd;
   boolean posi;
   boolean posar;
   boolean posab;
   
+  //Carga de imagenes
   PImage Drill1;
   PImage Drill2;
   PImage Drill3;
@@ -97,7 +100,7 @@ class Drill1 {
     
   }
 
- //Probablemente no utilizar 
+//Detección de teclas
   void teclaPresionada (int code) {
     if (code == 39 ) {  
       derecha=true;
@@ -129,6 +132,7 @@ void teclaSoltada (int code) {
 
 }
 
+//Dibujar la posición del taladro cuando está estatico
 void dibujar(){
   if(posd==true)
   {
@@ -144,11 +148,9 @@ void dibujar(){
   else if(posab==true){
     image(Drill2, x, y); 
   }
-//  else{
-//    image (Drill1, x, y);
-//  }
 }
 
+//Adquisición de puntos al situarse en casillas conquistadas o no conquistadas mientras tenga gasolina
 void puntuar(){
  if(sitio[a][b]==0 && destruir){
    sitio[a][b]=1;
@@ -161,6 +163,7 @@ void puntuar(){
  }
 }
 
+//Reproducir sonido al tener gasolina
 void sonido(){
  if(destruir==true || destruir2==true){
    playerdrill.play();
@@ -170,6 +173,7 @@ void sonido(){
  }
 }
 
+//Observar mejor la posición al desactivar el noStroke
 void hitbox(){
   fill(255,0,0,0);
   noStroke();
