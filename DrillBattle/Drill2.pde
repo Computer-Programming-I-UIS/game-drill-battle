@@ -1,9 +1,9 @@
 class Drill2{
 
-  float limder2=1235;
+  float limder2=950;
   float limiz2=52;
   float limsu2=y2+58;
-  float limin2=676;
+  float limin2=500;
   
   
   boolean derecha2 = false;
@@ -31,7 +31,7 @@ class Drill2{
     
   }
   void movimiento() {
-    if(key == '<'){
+    if(key == 'r'){
         inicial.dibuj();
         image (Drill12, x2, y2);
         mapa.estado_der2();
@@ -55,7 +55,7 @@ class Drill2{
           posi2=false;
           posar2=false;
           posab2=false;
-          x2= x2 + 52;
+          x2= x2 + 40;
           image (Drill12, x2, y2);
           delay(100);
     }
@@ -71,7 +71,7 @@ class Drill2{
           posi2=false;
           posar2=false;
           posab2=true;
-          y2= y2 + 52;
+          y2= y2 + 40;
           image (Drill22, x2, y2);
           delay(100); 
     }
@@ -87,7 +87,7 @@ class Drill2{
           posi2=true;
           posar2=false;
           posab2=false;
-          x2= x2 - 52;
+          x2= x2 - 40;
           image (Drill42, x2, y2);
           delay(100);
     }
@@ -103,7 +103,7 @@ class Drill2{
           posi2=false;
           posar2=true;
           posab2=false;
-          y2= y2 - 52;
+          y2= y2 - 40;
           image (Drill32, x2, y2);
           delay(100);
     }

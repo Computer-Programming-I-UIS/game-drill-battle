@@ -1,9 +1,9 @@
 class Drill1 {
 
-  float limder1=x+1248;
+  float limder1=x+950;
   float limiz1=x+58;
   float limsu1=y+58;
-  float limin1=y+677;
+  float limin1=y+500;
   
   boolean derecha = false;
   boolean izquierda = false;
@@ -40,7 +40,7 @@ class Drill1 {
           posi=false;
           posar=false;
           posab=false;
-          x= x + 52;
+          x= x + 40;
           image (Drill1, x, y);
           delay(100);
     }
@@ -56,7 +56,7 @@ class Drill1 {
           posi=false;
           posar=false;
           posab=true;
-          y= y + 52;
+          y= y + 40;
           image (Drill2, x, y);
           delay(100); 
     }
@@ -72,7 +72,7 @@ class Drill1 {
           posi=true;
           posar=false;
           posab=false;
-          x= x - 52;
+          x= x - 40;
           image (Drill4, x, y);
           delay(100);
     }
@@ -88,7 +88,7 @@ class Drill1 {
           posi=false;
           posar=true;
           posab=false;
-          y= y - 52;
+          y= y - 40;
           image (Drill3, x, y);
           delay(100);
       
@@ -163,7 +163,7 @@ void puntuar(){
 
 void hitbox(){
   fill(255,0,0,0);
-  //noStroke();
+//noSroke();
   rect(x,y,46,44);
 }
 }

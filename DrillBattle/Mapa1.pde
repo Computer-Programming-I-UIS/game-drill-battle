@@ -105,7 +105,7 @@ PImage[][]Fond = new PImage[Tamx][Tamy];
    
    void dibuj(){
     pushMatrix();
-    scale(0.52);      //0.52
+    scale(0.40);  //0.52
     {
      for(int i=0; i<Tamx;i++){
         for(int j=0; j<Tamy;j++){
@@ -121,9 +121,9 @@ PImage[][]Fond = new PImage[Tamx][Tamy];
      for(int i=0; i<Tamx; i++){ 
       for(int j=0; j<Tamy; j++){
        if(via[i][j] == true || via[i][j] == false)
-          rect(i*52,j*52,52,52);
-          posx[i][j] = i*52;
-          posy[i][j] = j*52;}
+          rect(i*40,j*40,40,40);
+          posx[i][j] = i*40;
+          posy[i][j] = j*40;}
      }
    }
    

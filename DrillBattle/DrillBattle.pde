@@ -14,12 +14,13 @@ Mapa inicial;
 Drill1 drill1 = new Drill1 ();
 Drill2 drill2 = new Drill2();
 Limites mapa = new Limites();
-Gas objeto1 = new Gas(208, 156, 4, 3);
-Gas objeto2 = new Gas(364, 676, 7, 13);
-Gas objeto3 = new Gas(936, 52, 18, 1);
-Gas objeto4 = new Gas(1092, 572, 21, 11);
+Gas objeto1 = new Gas(160, 120, 4, 3,1);
+Gas objeto2 = new Gas(280, 520, 7, 13, 1);  //Por ajustar
+Gas objeto3 = new Gas(720, 40, 18, 1, 2);
+Gas objeto4 = new Gas(840, 440, 21, 11, 2);
 
-PImage gas2;
+PImage gas2ama;
+PImage gas2ver;
 
 int[][] posx = new int[27][15];                        //Pos x de los cuadrados de hitbox 
 int[][] posy = new int[27][15];                        //Pos y de los cuadrados de hitbox
@@ -40,11 +41,11 @@ boolean movizq2=false;
 boolean destruir=false;
 boolean destruir2=false;
 
-  float x = 54;
-  float y = 56;
+  float x = 38;
+  float y = 42;
   
-  float x2=1248;
-  float y2=676;
+  float x2=960;
+  float y2=520;
   
   int c=24;
   int d=13;
@@ -54,13 +55,14 @@ boolean[][]via = new boolean[27][15];
 int contacto;  
 
 void setup(){
-fullScreen();
+size(1070,600);
 gameState = "START";
 minim = new Minim (this);
 player = minim.loadFile ("Theme-1.wav");
 player2 = minim.loadFile ("Theme-2.wav");
 player3 = minim.loadFile ("Theme-3.wav");
-gas2 = loadImage("SeekPng.com_esfera-png_2205701.png");
+gas2ama = loadImage("gas1.png");
+gas2ver = loadImage("gas2.png");
 inicial = new Mapa();
 inicial.diseñar();
 inicial.dibuj();

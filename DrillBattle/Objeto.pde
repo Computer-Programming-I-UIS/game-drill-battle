@@ -3,6 +3,7 @@ int sitiox;
 int sitioy;
 int xvia;
 int yvia;
+int clase;
 
 int tiempo;
 int tiempodehabilidad = 10000;
@@ -10,24 +11,25 @@ int tiempodehabilidad = 10000;
 
 boolean recolectado;
 
-  Gas(int ubicx, int ubicy, int posa, int posb){
+  Gas(int ubicx, int ubicy, int posa, int posb, int tipo){
     sitiox=ubicx;
     sitioy=ubicy;
     xvia=posa;
     yvia=posb;
+    clase=tipo;
     tiempo = millis();
   }
   
   void lugar(){
     
-    if(recolectado == false)
+    if(recolectado == false && clase==1)
     {
-      pushMatrix();
-      scale(0.14);
-      image(gas2, sitiox*7.14, sitioy*7.14);
-      //ellipseMode(CORNER);
-      //ellipse(sitiox, sitioy, 52, 52);
-      popMatrix();
+      image(gas2ama, sitiox, sitioy);
+    }
+    
+    if(recolectado == false && clase ==2)
+    {
+      image(gas2ver, sitiox, sitioy); 
     }
   }
   
