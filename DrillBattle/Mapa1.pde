@@ -130,7 +130,7 @@ PImage[][]Fond = new PImage[Tamx][Tamy];
    void generar(){
     if(destruir == true){
       via[a][b] = true;
-      Fond[a][b] = loadImage("Roca1.png");
+      Fond[a][b] = loadImage("Rocajug1.png");
     }
     else
       destruir=false;
@@ -139,12 +139,17 @@ PImage[][]Fond = new PImage[Tamx][Tamy];
    void generar2(){
     if(destruir2 == true){
       via[c][d] = true;
-      Fond[c][d] = loadImage("Roca1.png");
+      Fond[c][d] = loadImage("Rocajug2.png");
     }
     else
       destruir2=false;
    }
    
+   void terminar(){
+    if(puntos1==150 || puntos2==150){
+     gameState= "WIN"; 
+    }
+   }
 
    
   // void terminar(){

@@ -161,9 +161,18 @@ void puntuar(){
  }
 }
 
+void sonido(){
+ if(destruir==true || destruir2==true){
+   playerdrill.play();
+ }
+ else{
+   playerdrill.pause();
+ }
+}
+
 void hitbox(){
   fill(255,0,0,0);
-//noSroke();
+  noStroke();
   rect(x,y,46,44);
 }
 }
