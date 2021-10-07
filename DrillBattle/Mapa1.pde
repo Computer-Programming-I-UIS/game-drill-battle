@@ -135,4 +135,24 @@ PImage[][]Fond = new PImage[Tamx][Tamy];
     else
       destruir=false;
    }
+   
+   void generar2(){
+    if(destruir2 == true){
+      via[c][d] = true;
+      Fond[c][d] = loadImage("Roca1.png");
+    }
+    else
+      destruir2=false;
+   }
+   
+
+   
+  // void terminar(){
+  //  if(via[1][1]==true  && via[1][2]==true && via[1][3]==true && via[1][4]==true && via[1][5]==true && via[1][6]==true && via[1][7]==true && via[1][8]==true && via[1][9]==true && via[1][10]==true && via[1][11]==true && via[1][12]==true && via[1][13]==true && 
+  //  via[2][1]==true  && via[2][2]==true && via[2][3]==true && via[2][4]==true && via[2][5]==true && via[2][6]==true && via[2][7]==true && via[2][8]==true && via[2][9]==true && via[2][10]==true && via[2][11]==true && via[2][12]==true && via[2][13]==true && 
+  //  via[3][1]==true  && via[3][2]==true && via[3][3]==true && via[3][4]==true && via[3][5]==true && via[3][6]==true && via[3][7]==true && via[3][8]==true && via[3][9]==true && via[3][10]==true && via[3][11]==true && via[3][12]==true && via[3][13]==true &&
+  //  
+  //  via[24][13]==true)
+
+  //}
 }

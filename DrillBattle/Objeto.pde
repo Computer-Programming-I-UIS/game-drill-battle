@@ -40,6 +40,16 @@ boolean recolectado;
     }
   }
   
+   void obtener2(){
+    if(recolectado == false){
+      if(c==xvia && d==yvia){
+        recolectado=true;
+        destruir2=true; 
+      }
+    }
+  }
+  
+  
   void desact(){
     if(recolectado == true){
      int tiempopasado = millis() - tiempo;
@@ -53,4 +63,16 @@ boolean recolectado;
      }
   }
   
+    void desact2(){
+    if(recolectado == true){
+     int tiempopasado = millis() - tiempo;
+     
+     if(tiempopasado > tiempodehabilidad)
+       {
+        destruir2=false;
+        tiempo=millis();
+        recolectado=false;
+       }
+     }
+  }
 }

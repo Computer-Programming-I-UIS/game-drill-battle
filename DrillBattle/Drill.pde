@@ -29,21 +29,7 @@ class Drill1 {
     
   }
   void movimiento() {
-    if(keyPressed)
-    switch(keyCode){
-       case SHIFT:
-       {
-        inicial.dibuj();
-        image (Drill1, x, y);
-        mapa.estado_der();
-        mapa.estado_abj();
-        mapa.estado_izq();
-        mapa.estado_arri();
-        break;
-       }
-       case RIGHT:
-       {
-        if(movder==true && x<limder1 || destruir==true && x<limder1){
+    if(derecha && movder==true && x<limder1 || derecha && destruir==true && x<limder1){
           a=a+1;
           mapa.estado_der();
           mapa.estado_abj();
@@ -57,11 +43,9 @@ class Drill1 {
           x= x + 52;
           image (Drill1, x, y);
           delay(100);
-          break;}
-       }
-       case DOWN:
-       {
-         if(movabj==true && y<limin1  || destruir==true && y<limin1){
+    }
+    
+    if(abajo && movabj==true && y<limin1  || abajo && destruir==true && y<limin1){
           b=b+1;
           mapa.estado_der();
           mapa.estado_abj();
@@ -74,12 +58,10 @@ class Drill1 {
           posab=true;
           y= y + 52;
           image (Drill2, x, y);
-          delay(100);  
-          break;}
-       }
-       case LEFT:
-       {
-         if(movizq==true && x>limiz1 || destruir==true && x>limiz1 ){
+          delay(100); 
+    }
+    
+    if(izquierda && movizq==true && x>limiz1 || izquierda && destruir==true && x>limiz1){
           a=a-1;
           mapa.estado_izq();
           mapa.estado_abj();
@@ -93,11 +75,9 @@ class Drill1 {
           x= x - 52;
           image (Drill4, x, y);
           delay(100);
-          break;} 
-       }
-       case UP:
-       {
-         if(movarri==true && y>limsu1 || destruir==true && y>limsu1){
+    }
+    
+    if(arriba && movarri==true && y>limsu1 || arriba && destruir==true && y>limsu1){
           b=b-1;
           mapa.estado_arri();
           mapa.estado_abj();
@@ -111,9 +91,10 @@ class Drill1 {
           y= y - 52;
           image (Drill3, x, y);
           delay(100);
-          break;} 
-       }
+      
     }
+    
+    
   }
 
  //Probablemente no utilizar 
@@ -168,9 +149,21 @@ void dibujar(){
 //  }
 }
 
+void puntuar(){
+ if(sitio[a][b]==0 && destruir){
+   sitio[a][b]=1;
+   puntos1 += 1;
+ }
+ if(sitio[a][b]==2 && destruir){
+    sitio[a][b]=1;
+    puntos2 -= 1;
+    puntos1 += 1;
+ }
+}
+
 void hitbox(){
   fill(255,0,0,0);
-  noStroke();
+  //noStroke();
   rect(x,y,46,44);
 }
 }

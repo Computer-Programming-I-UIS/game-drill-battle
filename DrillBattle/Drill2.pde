@@ -1,20 +1,20 @@
 class Drill2{
 
-  float limder1=x2+1248;
-  float limiz1=x2+58;
-  float limsu1=y2+58;
-  float limin1=y2+677;
+  float limder2=1235;
+  float limiz2=52;
+  float limsu2=y2+58;
+  float limin2=676;
   
   
-  boolean derecha = false;
-  boolean izquierda = false;
-  boolean arriba = false;
-  boolean abajo = false;
+  boolean derecha2 = false;
+  boolean izquierda2 = false;
+  boolean arriba2 = false;
+  boolean abajo2 = false;
   
-  boolean posd;
-  boolean posi;
-  boolean posar;
-  boolean posab;
+  boolean posd2;
+  boolean posi2;
+  boolean posar2;
+  boolean posab2;
   
   
   PImage Drill12;
@@ -31,110 +31,143 @@ class Drill2{
     
   }
   void movimiento() {
-    if(keyPressed)
-    switch(key){
-       case '<':
-       {
+    if(key == '<'){
         inicial.dibuj();
         image (Drill12, x2, y2);
         mapa.estado_der2();
         mapa.estado_abj2();
         mapa.estado_izq2();
         mapa.estado_arri2();
-        break;
-       }
-       case 'd':
-       {
-        if(movder2==true && x<limder1 || destruir==true && x<limder1){
+        posd2=true;
+        posi2=false;
+        posar2=false;
+        posab2=false;
+    }
+    
+    if(derecha2 && movder2==true && x2<limder2 ||derecha2 && destruir2==true && x2<limder2){
           c=c+1;
           mapa.estado_der2();
           mapa.estado_abj2();
           mapa.estado_izq2();
           mapa.estado_arri2();
           inicial.dibuj();
-          posd=true;
-          posi=false;
-          posar=false;
-          posab=false;
+          posd2=true;
+          posi2=false;
+          posar2=false;
+          posab2=false;
           x2= x2 + 52;
           image (Drill12, x2, y2);
           delay(100);
-          break;}
-       }
-       case 's':
-       {
-         if(movabj2==true && y<limin1  || destruir==true && y<limin1){
+    }
+    
+    if(abajo2 && movabj2==true && y2<limin2  || abajo2 && destruir2==true && y2<limin2){
           d=d+1;
           mapa.estado_der2();
           mapa.estado_abj2();
           mapa.estado_izq2();
           mapa.estado_arri2();
           inicial.dibuj();
-          posd=false;
-          posi=false;
-          posar=false;
-          posab=true;
+          posd2=false;
+          posi2=false;
+          posar2=false;
+          posab2=true;
           y2= y2 + 52;
           image (Drill22, x2, y2);
-          delay(100);  
-          break;}
-       }
-       case 'a':
-       {
-         if(movizq2==true   || destruir==true  ){
+          delay(100); 
+    }
+    
+    if(izquierda2 && movizq2==true && x2>limiz2 || izquierda2 && destruir2==true && x2>limiz2){
           c=c-1;
           mapa.estado_izq2();
           mapa.estado_abj2();
           mapa.estado_der2();
           mapa.estado_arri2();
           inicial.dibuj();
-          posd=false;
-          posi=true;
-          posar=false;
-          posab=false;
+          posd2=false;
+          posi2=true;
+          posar2=false;
+          posab2=false;
           x2= x2 - 52;
           image (Drill42, x2, y2);
           delay(100);
-          break;} 
-       }
-       case 'w':
-       {
-         if(movarri2==true && y>limsu1 || destruir==true && y>limsu1){
+    }
+    
+    if(arriba2 && movarri2==true && y2>limsu2 || arriba2 && destruir2==true && y2>limsu2){
           d=d-1;
           mapa.estado_arri2();
           mapa.estado_abj2();
           mapa.estado_izq2();
           mapa.estado_der2();
           inicial.dibuj();
-          posd=false;
-          posi=false;
-          posar=true;
-          posab=false;
+          posd2=false;
+          posi2=false;
+          posar2=true;
+          posab2=false;
           y2= y2 - 52;
           image (Drill32, x2, y2);
           delay(100);
-          break;} 
-       }
     }
   }
   
+    void teclaPresionada2 () {
+    if (key == 'd' ) {  
+      derecha2=true;
+    }
+    if (key == 'a') {  
+      izquierda2=true;
+    }
+    if (key == 'w') {  
+      arriba2=true;
+    }
+    if (key == 's') {  
+      abajo2=true;
+    }
+  }
+
+void teclaSoltada2 () {
+  if (key == 'd') {  
+    derecha2=false;
+  }
+  if (key == 'a') {  
+    izquierda2=false;
+  }
+  if (key == 'w') { 
+    arriba2=false;
+  }
+  if (key == 's') {  
+    abajo2=false;
+  }
+
+}
+  
   void dibujar(){
-  if(posd==true)
+  if(posd2==true)
   {
     image (Drill12, x2, y2);
   }
-  else if(posi==true){
+  else if(posi2==true){
     image(Drill42, x2, y2); 
   }
-  if(posar==true)
+  if(posar2==true)
   {
     image (Drill32, x2, y2);
   }
-  else if(posab==true){
+  else if(posab2==true){
     image(Drill22, x2, y2); 
   }
-//  else{
-//    image (Drill1, x, y);
-//  }
+  }
+  
+ void puntuar2(){
+ 
+   if(sitio[c][d]==0 && destruir2){
+     sitio[c][d]=2;
+     puntos2 += 1;
+   }
+ 
+   if(sitio[c][d]==1 && destruir){
+     sitio[a][b]=2;
+     puntos1 -= 1;
+     puntos2 += 1;
+   }
 }
 }

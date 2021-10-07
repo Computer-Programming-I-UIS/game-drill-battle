@@ -1,8 +1,10 @@
 class Limites{
 //Probando los valores cercanos  
   void prueba(){ 
-   if(mouseButton==LEFT)
+   if(mouseButton==LEFT){
    print(via[a+1][b]);
+   print(puntos1);
+   print(puntos2);}
    else
    print();
   }

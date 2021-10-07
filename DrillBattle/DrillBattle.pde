@@ -6,12 +6,18 @@ AudioPlayer player3;
 
 String gameState;
 
+int[][] sitio= new int[27][15];
+int puntos1;
+int puntos2;
+
 Mapa inicial;
 Drill1 drill1 = new Drill1 ();
 Drill2 drill2 = new Drill2();
 Limites mapa = new Limites();
 Gas objeto1 = new Gas(208, 156, 4, 3);
 Gas objeto2 = new Gas(364, 676, 7, 13);
+Gas objeto3 = new Gas(936, 52, 18, 1);
+Gas objeto4 = new Gas(1092, 572, 21, 11);
 
 PImage gas2;
 
@@ -32,6 +38,7 @@ boolean movder2=false;
 boolean movizq2=false;
 
 boolean destruir=false;
+boolean destruir2=false;
 
   float x = 54;
   float y = 56;
@@ -90,6 +97,7 @@ void startGame () {
 }
 
 void playGame () {
+  
   player2.play();
   drill1.hitbox();
   inicial.hitbox();
@@ -97,18 +105,32 @@ void playGame () {
   mapa.estado_der();
   mapa.estado_izq();
   mapa.estado_arri();
+  
+  
   drill1.movimiento();
-  drill1.dibujar();
   drill2.movimiento();
   drill2.dibujar();
   drill1.dibujar();
+  drill1.puntuar();
+  drill2.puntuar2();
+
+  
   objeto1.lugar();
   objeto1.obtener();
   objeto1.desact();
   objeto2.lugar();
   objeto2.obtener();
   objeto2.desact();
+  objeto3.lugar();
+  objeto3.obtener2();
+  objeto3.desact2();
+  objeto4.lugar();
+  objeto4.obtener2();
+  objeto4.desact2();
+  
+  
   inicial.generar();
+  inicial.generar2();
 }
 
 void winGame () {
@@ -116,6 +138,8 @@ void winGame () {
 }
 
 void keyPressed() {
+  drill1.teclaPresionada(keyCode);
+  drill2.teclaPresionada2();
   drill1.hitbox();
   inicial.hitbox();
   mapa.prueba();
@@ -123,4 +147,6 @@ void keyPressed() {
 }
 
 void keyReleased() {
+  drill1.teclaSoltada(keyCode);
+  drill2.teclaSoltada2();
 }
