@@ -181,7 +181,8 @@ void draw(){
 void startGame () {
   if(!player.isPlaying()){
   player.loop();}
-  image (menu, 0, 0);
+  
+  
   if (botonjuego) {
     
     player.pause();
@@ -190,16 +191,13 @@ void startGame () {
     drill1.dibujar();
     gameState = "PLAY";
   }
+  if(gameState== "START"){
+  image (menu, 0, 0);
   fill (100, 30, 22);
   rect (x4, y4, w, h);
   fill (255);
   textFont(jugar);
   text ("JUGAR", 515, 449);
-  
-  if (botoninstruccion) {
-    gameState = "INSTRUCCION";
-    player.pause();
-  }
   fill (100, 30, 22);
   rect (n, o, p, q);
   fill (255);
@@ -209,6 +207,13 @@ void startGame () {
   fill (255);
   textFont(salir);
   text ("Para salir del juego presiona la tecla ESC", 330, 600);
+  }
+  
+  if (botoninstruccion) {
+    gameState = "INSTRUCCION";
+    player.pause();
+  }
+
 }
 
 void playGame () {
@@ -254,7 +259,14 @@ void playGame () {
 }
 
 void winGame () {
+  if(gameState=="WIN"){
   image(victoria, 0, 0);
+  fill (100, 30, 22);
+  rect (j, k, l, m);
+  fill (255);
+  textFont(juegodenuevo);
+  text ("VOLVER A JUGAR", 498, 350);}
+  
   if(!player4.isPlaying()){
   player4.loop();}
   if (botonreturn) {
@@ -285,15 +297,18 @@ void winGame () {
     player4.pause();
     botonreturn=false;
   }
-  fill (100, 30, 22);
-  rect (j, k, l, m);
-  fill (255);
-  textFont(juegodenuevo);
-  text ("VOLVER A JUGAR", 498, 350);
+  
 }
 
 void instruccion() {
+  if(gameState=="INSTRUCCION"){
   image (instrucciones, 0, 0);
+  fill (100, 30, 22);
+  rect (e, f, g, i);
+  fill (255);
+  textFont(juego);
+  text ("IR AL JUEGO", 825, 70);}
+  
   if(!player3.isPlaying()){
   player3.loop();}
   if (botonplay) {
@@ -305,11 +320,7 @@ void instruccion() {
     drill1.dibujar();
     
   }
-  fill (100, 30, 22);
-  rect (e, f, g, i);
-  fill (255);
-  textFont(juego);
-  text ("IR AL JUEGO", 825, 70);
+  
 }
 
 
