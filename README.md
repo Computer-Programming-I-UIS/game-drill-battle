@@ -22,7 +22,7 @@ El juego está inspirado en el videojuego clásico Digger, pero adaptado a otra 
 El juego consta con 3 temas diferentes que ambientan de forma heróica e introduciendo a los jugadores a la aventura que están por emprender. Tratamos de poner temas que suenen de forma épica para motivar al jugador a poner todo su empeño en esta batalla por el honor.
 
 Los temas que dan vida al juego son:
-- [Giorno's Theme ~ "il vento d'oro" [8-Bit; VRC6] - JoJo's Bizarre Adventure: Golden Wind](http://https://www.youtube.com/watch?v=VwUGpudY4Vw&t=18s "Giorno's Theme ~ "il vento d'oro" [8-Bit; VRC6] - JoJo's Bizarre Adventure: Golden Wind") (Usado para el menú principal y el gameplay).
+- [Giorno's Theme ~ "il vento d'oro" [8-Bit; VRC6] ](http://https://www.youtube.com/watch?v=VwUGpudY4Vw&t=80s "Giorno's Theme ~ "il vento d'oro" [8-Bit; VRC6] ") (Usado para el menú principal del juego).
 
 - [JoJo's Bizarre Adventure Opening 2 - Bloody Stream [8-bit; 2A03] [16-bit; Genesis]](http://https://www.youtube.com/watch?v=8R-gALZveUQ&list=PLcIZDcuuu7Rxtr-uHU8229o4hLSs9jcI6&index=4 "JoJo's Bizarre Adventure Opening 2 - Bloody Stream [8-bit; 2A03] [16-bit; Genesis]") (Usado para el menú de instrucciones al usuario).
 
@@ -39,3 +39,5 @@ Este juego fue ideado y desarrollado por los estudiantes Christian Camilo Ellis 
 
 
  **Te agradecemos por llegar hasta este punto, esperamos puedas disfrutar de la experiencia del juego y lo compartas con tus amigos.**
+
+
