@@ -15,7 +15,34 @@ Minim minim;
 AudioPlayer player;
 AudioPlayer player2;
 AudioPlayer player3;
+AudioPlayer player4;
 AudioPlayer playerdrill;
+
+//Botones de los menus
+boolean botonjuego = false;
+int x4 = 493;
+int y4 = 430;
+int w = 100;
+int h = 30;
+
+boolean botoninstruccion = false;
+int n = 440;
+int o = 490;
+int p = 200;
+int q = 30;
+
+boolean botonplay = false;
+int e = 800;
+int f = 50;
+int g = 150;
+int i = 30;
+
+boolean botonreturn = false;
+int j = 485;
+int k = 330;
+int l = 150;
+int m = 30;
+
 
 //Selector de estado
 String gameState;
@@ -23,8 +50,8 @@ String gameState;
 
 //Datos de puntuación
 int[][] sitio= new int[27][15];
-int puntos1;
-int puntos2;
+int puntos1=0;
+int puntos2=0;
 
 
 //Inializacion de clases mapa, limites, taladros y objetos
@@ -78,23 +105,58 @@ boolean destruir2=false;
  
 //Estado de las casillas  
 boolean[][]via = new boolean[27][15];  
-  
+
+//Fondo de puntuaciones y menus
+PImage fondo;
+PImage menu;
+PImage instrucciones;
+PImage victoria;
+
+//Textos
+PFont punt;
+PFont jugar;
+PFont instruccion;
+PFont juego;
+PFont salir;
+PFont juegodenuevo;
+
 int contacto;  
 
 void setup(){
-size(1070,600);
+size(1070,700);
 //Estado inicial
+
 gameState = "START";
+
 //Inicializar sonidos
+
 minim = new Minim (this);
 player = minim.loadFile ("Theme-1.wav");
 player2 = minim.loadFile ("Theme-2.wav");
 player3 = minim.loadFile ("Theme-3.wav");
+player4 = minim.loadFile ("Theme-4.wav");
 playerdrill= minim.loadFile("Taladro.mp3");
+
 //Cargar imagenes
+
 gas2ama = loadImage("gas1.png");
 gas2ver = loadImage("gas2.png");
+fondo = loadImage("Fondo.jpeg");
+menu = loadImage ("menu.jpeg");
+instrucciones = loadImage ("instrucciones.jpeg");
+victoria = loadImage ("victoria.jpeg");
+
+//Cargar fuentes
+
+punt = createFont("orbitron-black.otf", 30);
+jugar = createFont ("orbitron-black.otf", 14);
+instruccion = createFont ("orbitron-black.otf", 14);
+juego = createFont ("orbitron-black.otf", 14);
+salir = createFont ("orbitron-black.otf", 18);
+juegodenuevo = createFont ("orbitron-black.otf", 12);
+
 //Cargar datos del mapa 1
+
 inicial = new Mapa();
 inicial.diseñar();
 inicial.dibuj();
@@ -110,29 +172,49 @@ void draw(){
     playGame ();
   } else if (gameState == "WIN") {
     winGame();
+  } else if (gameState == "INSTRUCCION") {
+    instruccion();
   }
-  
+
 }
 
 void startGame () {
-  player.play();
-  textAlign (CENTER);
-  textSize (18);
-  fill (255);
-  text ("¡Haz click donde sea para jugar!", width/2, height/2);
-  textSize (14);
-  fill (255);
-  text ("Derrota a tu oponente para ganar", width/2, height/2 + 30 );
-  if (mousePressed == true) {
-    gameState = "PLAY";
+  if(!player.isPlaying()){
+  player.loop();}
+  image (menu, 0, 0);
+  if (botonjuego) {
+    
     player.pause();
     inicial.dibuj();
+    drill2.dibujar();
+    drill1.dibujar();
+    gameState = "PLAY";
   }
+  fill (100, 30, 22);
+  rect (x4, y4, w, h);
+  fill (255);
+  textFont(jugar);
+  text ("JUGAR", 515, 449);
+  
+  if (botoninstruccion) {
+    gameState = "INSTRUCCION";
+    player.pause();
+  }
+  fill (100, 30, 22);
+  rect (n, o, p, q);
+  fill (255);
+  textFont(instruccion);
+  text ("INSTRUCCIONES", 475, 510);
+
+  fill (255);
+  textFont(salir);
+  text ("Para salir del juego presiona la tecla ESC", 330, 600);
 }
 
 void playGame () {
-  
-  player2.play();
+   if(!player2.isPlaying()){
+   player2.loop();}
+
   
   drill1.hitbox();
   inicial.hitbox();
@@ -168,12 +250,69 @@ void playGame () {
   inicial.generar();
   inicial.generar2();
   inicial.terminar();
+  inicial.puntuaciones();
 }
 
 void winGame () {
-  player3.play();
-  background(0);
+  image(victoria, 0, 0);
+  if(!player4.isPlaying()){
+  player4.loop();}
+  if (botonreturn) {
+    ///////////////////////////////////////////////////////
+    puntos1=0;
+    puntos2=0;
+    a=1;
+    b=1;
+ 
+    x = 38;
+    y = 42;
+
+    x2=960;
+    y2=520;
+
+    c=24;
+    d=13;
+    
+    inicial.reinicio(); 
+    
+    inicial.diseñar();
+    inicial.dibuj();
+    drill1.mostrar();
+    drill2.mostrar();
+    
+     
+    gameState = "PLAY";
+    player4.pause();
+    botonreturn=false;
+  }
+  fill (100, 30, 22);
+  rect (j, k, l, m);
+  fill (255);
+  textFont(juegodenuevo);
+  text ("VOLVER A JUGAR", 498, 350);
 }
+
+void instruccion() {
+  image (instrucciones, 0, 0);
+  if(!player3.isPlaying()){
+  player3.loop();}
+  if (botonplay) {
+    gameState = "PLAY";
+    player3.pause();
+    inicial.dibuj();
+    drill1.aparecer();
+    drill2.dibujar();
+    drill1.dibujar();
+    
+  }
+  fill (100, 30, 22);
+  rect (e, f, g, i);
+  fill (255);
+  textFont(juego);
+  text ("IR AL JUEGO", 825, 70);
+}
+
+
 //Funciones de controles
 void keyPressed() {  
   drill1.teclaPresionada(keyCode);
@@ -187,4 +326,39 @@ void keyPressed() {
 void keyReleased() {
   drill1.teclaSoltada(keyCode);
   drill2.teclaSoltada2();
+}
+
+void mousePressed () {
+  if ((mouseX>x4) && (mouseX < x4+w) &&
+    (mouseY > y4) && (mouseY < y4+h)) {
+    if (botonjuego) {
+      botonjuego = false;
+    } else {
+      botonjuego = true;
+    }
+  }
+  if ((mouseX>n) && (mouseX< n+p) &&
+    (mouseY > o) && (mouseY < o+q)) {
+    if (botoninstruccion) {
+      botoninstruccion = false;
+    } else {
+      botoninstruccion = true;
+    }
+  }
+  if ((mouseX>e) && (mouseX< e+g) &&
+    (mouseY > f) && (mouseY < f+i)) {
+    if (botonplay) {
+      botonplay = false;
+    } else {
+      botonplay = true;
+    }
+  }
+  if ((mouseX>j) && (mouseX< j+l) &&
+    (mouseY > k) && (mouseY < k+m)) {
+    if (botonreturn) {
+      botonreturn = false;
+    } else {
+      botonreturn = true;
+    }
+  }
 }

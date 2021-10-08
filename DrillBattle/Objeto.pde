@@ -70,7 +70,7 @@ boolean recolectado;
     void desact2(){
     if(recolectado == true){
      int tiempopasado = millis() - tiempo;
-     
+     playerdrill.loop();
      if(tiempopasado > tiempodehabilidad)
        {
         destruir2=false;

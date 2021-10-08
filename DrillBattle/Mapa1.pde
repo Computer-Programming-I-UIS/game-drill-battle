@@ -48,7 +48,7 @@ PImage[][]Fond = new PImage[Tamx][Tamy];
     for(int x=0; x<Tamy;x++){
       via[26][x]=false;}  
     
-    for(int x=1; x<14; x++){                      //Columna derecha mayor          //random(1,3)
+    for(int x=1; x<14; x++){                      //Columna derecha mayor          //random(1,7)
       Fond[24][x] = loadImage("Roca"+int(random(1,7))+".png");
       via[24][x]=true;}
     
@@ -152,10 +152,46 @@ PImage[][]Fond = new PImage[Tamx][Tamy];
 
    //Finalizador de la partida al alcanzar los 150 puntos
    void terminar(){
-    if(puntos1==150 || puntos2==150){
+    if(puntos1==100 || puntos2==100){
      gameState= "WIN"; 
+     player2.pause();
+     playerdrill.pause();
     }
    }
 
-   
+//Dibujar puntaciones debajo  
+   void puntuaciones(){
+    
+    image(fondo, 0, 600);
+    fill(255);
+    textFont(punt);
+    text("Jugador 1:   " + int(puntos1), 150, 665);
+    text("Jugador 2:   " + int(puntos2), 750, 665);
+    fill(255,0);
+   }
+
+
+//Reiniciar valores en caso de reinicio de juego
+   void reinicio(){
+    for(int i=0; i<27; i++){
+     for(int j=0; j<15; j++){
+      via[i][j]=false; 
+      Fond[i][j]= loadImage("Tierra.png");
+      destruir=false;
+      destruir2=false;
+     }
+    }
+    for(int i=1;i<Tamx-1;i++){
+      Fond[i][0]= loadImage("TierraArr.png");}
+    for(int i=1;i<Tamy-1; i++){
+      Fond[0][i]= loadImage("TierraIzq.png");}
+    for(int i=1;i<Tamy-1; i++){
+      Fond[Tamx-1][i]= loadImage("TierraDer.png");}  
+    for(int i=1;i<Tamx-1; i++){
+      Fond[i][Tamy-1]= loadImage("TierraAbaj.png");}
+      Fond[0][0]= loadImage("EsquinaIzqArr.png");
+      Fond[0][Tamy-1]= loadImage("EsquinaIzqAbj.png");
+      Fond[Tamx-1][0]= loadImage("EsquinaDerArr.png");
+      Fond[Tamx-1][Tamy-1]= loadImage("EsquinaDerAbj.png");
+   }
 }

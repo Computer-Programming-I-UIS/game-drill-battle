@@ -164,8 +164,8 @@ void teclaSoltada2 () {
      puntos2 += 1;
    }
  
-   if(sitio[c][d]==1 && destruir){
-     sitio[a][b]=2;
+   if(sitio[c][d]==1 && destruir2){
+     sitio[c][d]=2;
      puntos1 -= 1;
      puntos2 += 1;
    }

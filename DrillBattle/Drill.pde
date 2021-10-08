@@ -165,12 +165,20 @@ void puntuar(){
 
 //Reproducir sonido al tener gasolina
 void sonido(){
- if(destruir==true || destruir2==true){
+ if(destruir==true || destruir2==true ){
    playerdrill.play();
+   if(playerdrill.isPlaying()==false){
+   playerdrill.play();}
  }
  else{
    playerdrill.pause();
  }
+}
+
+void aparecer(){
+
+  inicial.dibuj();
+  image (Drill1, x, y);
 }
 
 //Observar mejor la posición al desactivar el noStroke
