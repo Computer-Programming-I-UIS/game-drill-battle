@@ -15,6 +15,7 @@ Drill Battle tiene un funcionamiento bastante sencillo:
 - Para mover el segundo drill (o green Drill) debes pulsar las teclas de movimiento w,a,s,d, entendiendo la lógica de que W te mueve hacia arriba, S te mueve hacia abajo, A te mueve hacia la izquierda y D te mueve hacia la derecha.
 - Para poder acceder a las funciones de excavación deberás recoger los galones de gasolinas correspondientes al color de tu taladro, si recoges uno del color contrario no podrás moverte por el mapa libremente.
 - La duración de la función excavación es de 10 segundos, por lo que si se pasa el tiempo tendrás que volver a recoger el galón correspondiente.
+- El juego termina cuando uno de los dos jugadores llegue a 150 puntos.
 
 ### ¿En qué se inspiró el juego?
 El juego está inspirado en el videojuego clásico Digger, pero adaptado a otra forma de juego, quitando el modo de juego individual y convirtiéndolo en un juego para dos personas.    
