@@ -1,4 +1,5 @@
-# ¡Bienvenido a Drill Battle!
+# ¡Bienvenido a Drill Battle!  
+![Portada](https://github.com/Computer-Programming-I-UIS/game-drill-battle/blob/8ceb1f390f2337fe982fbc4b9c3c63d2d370e511/Imagenes/WhatsApp%20Image%202021-10-07%20at%209.23.24%20PM.jpeg)
 ### ¿Qué es Drill Battle?
 Drill Battle es un juego para dos jugadores en el cual debes usar tu agilidad y razonamiento para ir excavando el mapa y dominar la mayor parte del territorio. Drill Batlle nace de la mente de dos estudiantes universitarios estresados y agobiados por el extenuante semestre que cursan, es allí donde idean un juego en el que ambos puedan competir para ver quien es **el rey de los taladros**.
 ### ¿Qué necesito para jugar Drill Battle?
@@ -16,7 +17,8 @@ Drill Battle tiene un funcionamiento bastante sencillo:
 - La duración de la función excavación es de 10 segundos, por lo que si se pasa el tiempo tendrás que volver a recoger el galón correspondiente.
 
 ### ¿En qué se inspiró el juego?
-El juego está inspirado en el videojuego clásico Digger, pero adaptado a otra forma de juego, quitando el modo de juego individual y convirtiéndolo en un juego para dos personas.
+El juego está inspirado en el videojuego clásico Digger, pero adaptado a otra forma de juego, quitando el modo de juego individual y convirtiéndolo en un juego para dos personas.    
+![Digger](https://github.com/Computer-Programming-I-UIS/game-drill-battle/blob/8ceb1f390f2337fe982fbc4b9c3c63d2d370e511/Imagenes/Digger.jpg)
 
 ### Banda sonora
 El juego consta con 3 temas diferentes que ambientan de forma heróica e introduciendo a los jugadores a la aventura que están por emprender. Tratamos de poner temas que suenen de forma épica para motivar al jugador a poner todo su empeño en esta batalla por el honor.
@@ -29,14 +31,15 @@ Los temas que dan vida al juego son:
 - [Jonathan's Theme - Fukutsu Mushin no Sakebi [8-bit; VRC6] [16-bit; SNES] - JoJo's Bizarre Adventure](https://www.youtube.com/watch?v=_gGJIbENt6U&t=9s "Jonathan's Theme - Fukutsu Mushin no Sakebi [8-bit; VRC6] [16-bit; SNES] - JoJo's Bizarre Adventure") (Usada para la cinemática de victoria).
 
 ### Clasificación del juego
-Drill Battle es un juego para todas las edades, desarrollado para ser jugado por cualquiera que desee pasar su tiempo libre luchando con un amigo por el control del terreno.
+Drill Battle es un juego para todas las edades, desarrollado para ser jugado por cualquiera que desee pasar su tiempo libre luchando con un amigo por el control del terreno.  
+![Clasificacion](https://github.com/Computer-Programming-I-UIS/game-drill-battle/blob/8ceb1f390f2337fe982fbc4b9c3c63d2d370e511/Imagenes/descarga.png)
 
 ### ¿Quiénes son los desarrolladores del juego?
 Este juego fue ideado y desarrollado por los estudiantes Christian Camilo Ellis Jiménez y Jose Feliz Algarín Cotes.
 
-### Capturas del juego
-
-
+### Capturas del juego  
+![Inicio](https://github.com/Computer-Programming-I-UIS/game-drill-battle/blob/8ceb1f390f2337fe982fbc4b9c3c63d2d370e511/Imagenes/Captura%20de%20pantalla%202021-10-07%20231753.png)  
+![ingame](https://github.com/Computer-Programming-I-UIS/game-drill-battle/blob/8ceb1f390f2337fe982fbc4b9c3c63d2d370e511/Imagenes/Captura%20de%20pantalla%202021-10-07%20232047.png)  
 
  **Te agradecemos por llegar hasta este punto, esperamos puedas disfrutar de la experiencia del juego y lo compartas con tus amigos.**
 
