@@ -8,6 +8,7 @@ Autores: Jose Félix Algarín Cotes
 DrillBattle:  Juego basado en la idea de Digger (1983) pero adaptado en el enfoque pvp
               en el que se tiene que disputar el mayor domino del territorio posible,
               el jugador que primero alcance 150 puntos resultará como vencedor.
+              
 ********************************/
 //Creacion de datos de sonido
 import ddf.minim.*;
@@ -265,8 +266,17 @@ void winGame () {
   rect (j, k, l, m);
   fill (255);
   textFont(juegodenuevo);
-  text ("VOLVER A JUGAR", 498, 350);}
-  
+  text ("VOLVER A JUGAR", 498, 350);
+    if(puntos1==100){
+    textFont(punt);  
+    text("¡Jugador 1 es el ganador!", 135, 500);
+  }
+    if(puntos2==100){
+     textFont(punt);
+     text("¡Jugador 2 es el ganador!", 540, 500);
+    }
+  }
+
   if(!player4.isPlaying()){
   player4.loop();}
   if (botonreturn) {
