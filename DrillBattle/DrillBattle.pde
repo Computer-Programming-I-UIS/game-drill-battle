@@ -207,12 +207,18 @@ void startGame () {
   rect (m1, u1, t1, e1);
   image (mute, 1005, 25);
   
+  fill (100, 30, 22);
+  rect (s1,a1,l1,i1);
+  fill (255);
+  textFont(salir);
+  text ("SALIR",510,632);
+  
   botonvolver=false;
 
   }
   
+  
   if (botoninstruccion) {
-    exit();
     gameState = "INSTRUCCION";
     player.pause();
     botoninstruccion=false;
@@ -222,6 +228,10 @@ void startGame () {
     gameState = "CREDITOS";
     player.pause();
     botoncreditos=false;
+  }
+  
+  if (botonsalida) {
+    exit();
   }
   
   if (botonmute) {
@@ -297,11 +307,17 @@ void winGame () {
     if(puntos1==100){
     textFont(punt);  
     text("¡Jugador 1 es el ganador!", 135, 500);
-  }
+    }
     if(puntos2==100){
      textFont(punt);
      text("¡Jugador 2 es el ganador!", 540, 500);
     }
+  fill (100, 30, 22);
+  rect (b2,a2,c2,k2);
+  fill (255);
+  textFont(juegodenuevo);
+  text ("VOLVER AL MENÚ", 690, 170); 
+    
   }
 
   if(!player4.isPlaying()){
@@ -333,6 +349,35 @@ void winGame () {
     gameState = "PLAY";
     player4.pause();
     botonreturn=false;
+  }
+  
+  if (botonvuelvemenu) {
+    gameState = "START";
+    player4.pause();
+    
+    
+    puntos1=0;
+    puntos2=0;
+    a=1;
+    b=1;
+ 
+    x = 38;
+    y = 42;
+
+    x2=960;
+    y2=520;
+
+    c=24;
+    d=13;
+    
+    inicial.reinicio(); 
+    
+    inicial.diseñar();
+    inicial.dibuj();
+    drill1.mostrar();
+    drill2.mostrar();
+    botonreturn=false;
+    botonvuelvemenu=false;
   }
   
 }

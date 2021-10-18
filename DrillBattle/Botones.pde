@@ -23,6 +23,12 @@ int k = 330;
 int l = 150;
 int m = 30;
 
+boolean botonvuelvemenu = false;
+int b2 = 680;
+int a2 = 150;
+int c2 = 150;
+int k2 = 30;
+
 boolean botonvolver = false;
 int n1 = 800;
 int o1 = 50;
@@ -34,6 +40,12 @@ int r = 440;
 int s = 550;
 int t = 200;
 int u = 30;
+
+boolean botonsalida = false;
+int s1 = 440;
+int a1 = 610;
+int l1 = 200;
+int i1 = 30;
 
 boolean botonmute = false;
 int m1 = 1000;
@@ -140,4 +152,22 @@ void mousePressed () {
       botonmute4 = true;
     }
   }
+    if ((mouseX>b2) && (mouseX< b2+c2) &&
+    (mouseY > a2) && (mouseY < a2+k2)) {
+    if (botonvuelvemenu) {
+      botonvuelvemenu = false;
+    } else {
+      botonvuelvemenu = true;
+    }
+  }
+  
+    if ((mouseX>s1) && (mouseX< s1+l1) &&
+    (mouseY > a1) && (mouseY < a1+i1)) {
+    if (botonsalida) {
+      botonsalida = false;
+    } else {
+      botonsalida = true;
+    }
+  }
+  
 }
