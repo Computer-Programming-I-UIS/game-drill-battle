@@ -19,30 +19,7 @@ AudioPlayer player3;
 AudioPlayer player4;
 AudioPlayer playerdrill;
 
-//Botones de los menus
-boolean botonjuego = false;
-int x4 = 493;
-int y4 = 430;
-int w = 100;
-int h = 30;
 
-boolean botoninstruccion = false;
-int n = 440;
-int o = 490;
-int p = 200;
-int q = 30;
-
-boolean botonplay = false;
-int e = 800;
-int f = 50;
-int g = 150;
-int i = 30;
-
-boolean botonreturn = false;
-int j = 485;
-int k = 330;
-int l = 150;
-int m = 30;
 
 
 //Selector de estado
@@ -112,6 +89,7 @@ PImage fondo;
 PImage menu;
 PImage instrucciones;
 PImage victoria;
+PImage mute;
 
 //Textos
 PFont punt;
@@ -120,6 +98,7 @@ PFont instruccion;
 PFont juego;
 PFont salir;
 PFont juegodenuevo;
+PFont creditos;
 
 int contacto;  
 
@@ -146,6 +125,7 @@ fondo = loadImage("Fondo.jpeg");
 menu = loadImage ("menu.jpeg");
 instrucciones = loadImage ("instrucciones.jpeg");
 victoria = loadImage ("victoria.jpeg");
+mute = loadImage ("mute.png");
 
 //Cargar fuentes
 
@@ -155,6 +135,7 @@ instruccion = createFont ("orbitron-black.otf", 14);
 juego = createFont ("orbitron-black.otf", 14);
 salir = createFont ("orbitron-black.otf", 18);
 juegodenuevo = createFont ("orbitron-black.otf", 12);
+creditos = createFont ("orbitron-black.otf", 14);
 
 //Cargar datos del mapa 1
 
@@ -175,6 +156,8 @@ void draw(){
     winGame();
   } else if (gameState == "INSTRUCCION") {
     instruccion();
+  } else if (gameState == "CREDITOS") {
+    creditos();
   }
 
 }
@@ -191,6 +174,7 @@ void startGame () {
     drill2.dibujar();
     drill1.dibujar();
     gameState = "PLAY";
+    botonjuego=false;
   }
   if(gameState== "START"){
   image (menu, 0, 0);
@@ -199,6 +183,8 @@ void startGame () {
   fill (255);
   textFont(jugar);
   text ("JUGAR", 515, 449);
+  
+  
   fill (100, 30, 22);
   rect (n, o, p, q);
   fill (255);
@@ -208,11 +194,40 @@ void startGame () {
   fill (255);
   textFont(salir);
   text ("Para salir del juego presiona la tecla ESC", 330, 600);
+  
+  
+  fill (100, 30, 22);
+  rect (r, s, t, u);
+  fill (255);
+  textFont(creditos);
+  text ("CREDITOS", 502, 570);
+  
+  
+  fill (100, 30, 22);
+  rect (m1, u1, t1, e1);
+  image (mute, 1005, 25);
+  
+  botonvolver=false;
+
   }
   
   if (botoninstruccion) {
+    exit();
     gameState = "INSTRUCCION";
     player.pause();
+    botoninstruccion=false;
+  }
+  
+  if (botoncreditos) {
+    gameState = "CREDITOS";
+    player.pause();
+    botoncreditos=false;
+  }
+  
+  if (botonmute) {
+    player.mute();
+  } else {
+    player.unmute();
   }
 
 }
@@ -220,7 +235,15 @@ void startGame () {
 void playGame () {
    if(!player2.isPlaying()){
    player2.loop();}
-
+  
+  if (botonmute4) {
+    player2.mute();
+  } else {
+    player2.unmute();
+  }
+  fill (100, 30, 22);
+  rect (m4, u4, t4, e4);
+  image (mute, 985, 55);
   
   drill1.hitbox();
   inicial.hitbox();
@@ -257,6 +280,10 @@ void playGame () {
   inicial.generar2();
   inicial.terminar();
   inicial.puntuaciones();
+  
+  fill (100, 30, 22);
+  rect (m4, u4, t4, e4);
+  image (mute, 985, 55);
 }
 
 void winGame () {
@@ -317,7 +344,16 @@ void instruccion() {
   rect (e, f, g, i);
   fill (255);
   textFont(juego);
-  text ("IR AL JUEGO", 825, 70);}
+  text ("IR AL JUEGO", 825, 70);
+  if (botonmute2) {
+    player3.mute();
+  } else {
+    player3.unmute();
+  }
+  fill (100, 30, 22);
+  rect (m2, u2, t2, e2);
+  image (mute, 985, 55);
+  }
   
   if(!player3.isPlaying()){
   player3.loop();}
@@ -331,6 +367,33 @@ void instruccion() {
     
   }
   
+}
+
+void creditos() {
+  background(0);
+  player3.play();
+  if (botonvolver) {
+    
+    player3.pause();
+    gameState = "START";
+    botoncreditos=false;
+    
+  }
+  if(gameState=="CREDITOS"){
+  fill (100, 30, 22);
+  rect (n1, o1, p1, q1);
+  fill (255);
+  textFont(juego);
+  text ("IR AL MENU", 830, 70);
+  
+   if (botonmute3) {
+    player3.mute();
+  } else {
+    player3.unmute();
+  }
+  fill (100, 30, 22);
+  rect (m3, u3, t3, e3);
+  image (mute, 985, 55);}
 }
 
 
@@ -347,39 +410,4 @@ void keyPressed() {
 void keyReleased() {
   drill1.teclaSoltada(keyCode);
   drill2.teclaSoltada2();
-}
-
-void mousePressed () {
-  if ((mouseX>x4) && (mouseX < x4+w) &&
-    (mouseY > y4) && (mouseY < y4+h)) {
-    if (botonjuego) {
-      botonjuego = false;
-    } else {
-      botonjuego = true;
-    }
-  }
-  if ((mouseX>n) && (mouseX< n+p) &&
-    (mouseY > o) && (mouseY < o+q)) {
-    if (botoninstruccion) {
-      botoninstruccion = false;
-    } else {
-      botoninstruccion = true;
-    }
-  }
-  if ((mouseX>e) && (mouseX< e+g) &&
-    (mouseY > f) && (mouseY < f+i)) {
-    if (botonplay) {
-      botonplay = false;
-    } else {
-      botonplay = true;
-    }
-  }
-  if ((mouseX>j) && (mouseX< j+l) &&
-    (mouseY > k) && (mouseY < k+m)) {
-    if (botonreturn) {
-      botonreturn = false;
-    } else {
-      botonreturn = true;
-    }
-  }
 }
