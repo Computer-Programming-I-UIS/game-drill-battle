@@ -1,8 +1,8 @@
 //Botones de los menus
 boolean botonjuego = false;
-int x4 = 493;
+int x4 = 440;
 int y4 = 430;
-int w = 100;
+int w = 200;
 int h = 30;
 
 boolean botoninstruccion = false;
@@ -18,15 +18,15 @@ int g = 150;
 int i = 30;
 
 boolean botonreturn = false;
-int j = 485;
-int k = 330;
-int l = 150;
+int j = 800;
+int k = 530;
+int l = 185;
 int m = 30;
 
 boolean botonvuelvemenu = false;
-int b2 = 680;
-int a2 = 150;
-int c2 = 150;
+int b2 = 800;
+int a2 = 580;
+int c2 = 185;
 int k2 = 30;
 
 boolean botonvolver = false;

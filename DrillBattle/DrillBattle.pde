@@ -88,8 +88,10 @@ boolean[][]via = new boolean[27][15];
 PImage fondo;
 PImage menu;
 PImage instrucciones;
-PImage victoria;
+PImage victoria1;
+PImage victoria2;
 PImage mute;
+PImage sound;
 
 //Textos
 PFont punt;
@@ -123,19 +125,21 @@ gas2ama = loadImage("gas1.png");
 gas2ver = loadImage("gas2.png");
 fondo = loadImage("Fondo.jpeg");
 menu = loadImage ("menu.jpeg");
-instrucciones = loadImage ("instrucciones.jpeg");
-victoria = loadImage ("victoria.jpeg");
+instrucciones = loadImage ("Instruc.png");
+victoria1 = loadImage ("Victoria amarilla.png");
+victoria2 = loadImage("Victoria verde.png");
 mute = loadImage ("mute.png");
+sound = loadImage("sound.png");
 
 //Cargar fuentes
 
-punt = createFont("orbitron-black.otf", 30);
-jugar = createFont ("orbitron-black.otf", 14);
-instruccion = createFont ("orbitron-black.otf", 14);
-juego = createFont ("orbitron-black.otf", 14);
-salir = createFont ("orbitron-black.otf", 18);
-juegodenuevo = createFont ("orbitron-black.otf", 12);
-creditos = createFont ("orbitron-black.otf", 14);
+punt = createFont("PressStart2P.ttf", 30);
+jugar = createFont ("PressStart2P.ttf", 14);
+instruccion = createFont ("PressStart2P.ttf", 14);
+juego = createFont ("PressStart2P.ttf", 12);
+salir = createFont ("PressStart2P.ttf", 14);
+juegodenuevo = createFont ("PressStart2P.ttf", 12);
+creditos = createFont ("PressStart2P.ttf", 14);
 
 //Cargar datos del mapa 1
 
@@ -182,25 +186,22 @@ void startGame () {
   rect (x4, y4, w, h);
   fill (255);
   textFont(jugar);
-  text ("JUGAR", 515, 449);
+  text ("JUGAR", 508, 454);
   
+  //rect(0,0,500,500);
   
   fill (100, 30, 22);
   rect (n, o, p, q);
   fill (255);
   textFont(instruccion);
-  text ("INSTRUCCIONES", 475, 510);
-
-  fill (255);
-  textFont(salir);
-  text ("Para salir del juego presiona la tecla ESC", 330, 600);
+  text ("INSTRUCCIONES", 450, 512);
   
   
   fill (100, 30, 22);
   rect (r, s, t, u);
   fill (255);
   textFont(creditos);
-  text ("CREDITOS", 502, 570);
+  text ("CREDITOS", 485, 575);
   
   
   fill (100, 30, 22);
@@ -211,7 +212,7 @@ void startGame () {
   rect (s1,a1,l1,i1);
   fill (255);
   textFont(salir);
-  text ("SALIR",510,632);
+  text ("SALIR",505,632);
   
   botonvolver=false;
 
@@ -236,8 +237,16 @@ void startGame () {
   
   if (botonmute) {
     player.mute();
+    if(gameState == "START"){
+    fill (182, 6, 6);
+    rect (m1, u1, t1, e1);
+    image (mute, 1005, 25);}
   } else {
     player.unmute();
+    if(gameState == "START"){
+    fill (100, 30, 22);
+    rect (m1, u1, t1, e1);
+    image (sound, 1005, 25);}
   }
 
 }
@@ -248,12 +257,16 @@ void playGame () {
   
   if (botonmute4) {
     player2.mute();
+    fill (182, 6, 6);
+    rect (m4, u4, t4, e4);
+    image (mute, 985, 55);
   } else {
     player2.unmute();
+    fill (100, 30, 22);
+    rect (m4, u4, t4, e4);
+    image (sound, 985, 55);
   }
-  fill (100, 30, 22);
-  rect (m4, u4, t4, e4);
-  image (mute, 985, 55);
+  
   
   drill1.hitbox();
   inicial.hitbox();
@@ -291,32 +304,31 @@ void playGame () {
   inicial.terminar();
   inicial.puntuaciones();
   
-  fill (100, 30, 22);
-  rect (m4, u4, t4, e4);
-  image (mute, 985, 55);
+  
 }
 
 void winGame () {
   if(gameState=="WIN"){
-  image(victoria, 0, 0);
+  
+    if(puntos1==100){
+      image(victoria1, 0, 0);
+      }
+      if(puntos2==100){
+       image(victoria2, 0, 0);
+      }
+    
   fill (100, 30, 22);
   rect (j, k, l, m);
   fill (255);
   textFont(juegodenuevo);
-  text ("VOLVER A JUGAR", 498, 350);
-    if(puntos1==100){
-    textFont(punt);  
-    text("¡Jugador 1 es el ganador!", 135, 500);
-    }
-    if(puntos2==100){
-     textFont(punt);
-     text("¡Jugador 2 es el ganador!", 540, 500);
-    }
+  text ("VOLVER A JUGAR", 810, 552);
+    
   fill (100, 30, 22);
   rect (b2,a2,c2,k2);
   fill (255);
   textFont(juegodenuevo);
-  text ("VOLVER AL MENÚ", 690, 170); 
+  text ("VOLVER AL MENÚ", 810, 602); 
+    
     
   }
 
@@ -389,15 +401,20 @@ void instruccion() {
   rect (e, f, g, i);
   fill (255);
   textFont(juego);
-  text ("IR AL JUEGO", 825, 70);
+  text ("IR AL JUEGO", 815, 70);
   if (botonmute2) {
     player3.mute();
+    if(gameState=="INSTRUCCION"){
+    fill (182, 6, 6);
+    rect (m2, u2, t2, e2);
+    image (mute, 985, 55);}
   } else {
     player3.unmute();
+    if(gameState=="INSTRUCCION"){
+    fill (100, 30, 22);
+    rect (m2, u2, t2, e2);
+    image (sound, 985, 55);}
   }
-  fill (100, 30, 22);
-  rect (m2, u2, t2, e2);
-  image (mute, 985, 55);
   }
   
   if(!player3.isPlaying()){
@@ -429,16 +446,22 @@ void creditos() {
   rect (n1, o1, p1, q1);
   fill (255);
   textFont(juego);
-  text ("IR AL MENU", 830, 70);
+  text ("IR AL MENU", 815, 70);
   
    if (botonmute3) {
     player3.mute();
+    if(gameState=="CREDITOS"){
+    fill (182, 6, 6);
+    rect (m3, u3, t3, e3);
+    image (mute, 985, 55);}
   } else {
     player3.unmute();
+    if(gameState=="CREDITOS"){
+    fill (100, 30, 22);
+    rect (m3, u3, t3, e3);
+    image (sound, 985, 55);}
   }
-  fill (100, 30, 22);
-  rect (m3, u3, t3, e3);
-  image (mute, 985, 55);}
+  }
 }
 
 
