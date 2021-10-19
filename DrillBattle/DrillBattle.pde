@@ -93,6 +93,7 @@ PImage victoria2;
 PImage mute;
 PImage sound;
 
+
 //Textos
 PFont punt;
 PFont jugar;
@@ -130,6 +131,8 @@ victoria1 = loadImage ("Victoria amarilla.png");
 victoria2 = loadImage("Victoria verde.png");
 mute = loadImage ("mute.png");
 sound = loadImage("sound.png");
+Credito = loadImage("Credito.png");
+
 
 //Cargar fuentes
 
@@ -433,12 +436,19 @@ void instruccion() {
 
 void creditos() {
   background(0);
+  aparecerysubir();
   player3.play();
   if (botonvolver) {
     
     player3.pause();
     gameState = "START";
     botoncreditos=false;
+    numerodecredito=1;
+    numerodecredito2=1;
+    numerodecredito3=1;
+    posc=800;
+    posc2=1000;
+    posc3=1200;
     
   }
   if(gameState=="CREDITOS"){

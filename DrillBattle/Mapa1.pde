@@ -165,8 +165,8 @@ PImage[][]Fond = new PImage[Tamx][Tamy];
     image(fondo, 0, 600);
     fill(255);
     textFont(punt);
-    text("Jugador 1:   " + int(puntos1), 150, 665);
-    text("Jugador 2:   " + int(puntos2), 750, 665);
+    text("Jugador 1:   " + int(puntos1), 80, 665);
+    text("Jugador 2:   " + int(puntos2), 580, 665);
     fill(255,0);
    }
 
