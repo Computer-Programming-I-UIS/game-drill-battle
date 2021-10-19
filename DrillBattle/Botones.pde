@@ -13,7 +13,7 @@ int q = 30;
 
 boolean botonplay = false;
 int e = 800;
-int f = 50;
+int f = 30;
 int g = 150;
 int i = 30;
 
@@ -55,7 +55,7 @@ int e1= 30;
 
 boolean botonmute2 = false;
 int m2 = 980;
-int u2 = 50;
+int u2 = 30;
 int t2= 30;
 int e2= 30;
 
@@ -66,7 +66,7 @@ int t3= 30;
 int e3= 30;
 
 boolean botonmute4 = false;
-int m4 = 980;
+int m4 = 1010;
 int u4 = 50;
 int t4= 30;
 int e4= 30;

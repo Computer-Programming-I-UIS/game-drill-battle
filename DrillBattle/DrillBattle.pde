@@ -124,7 +124,7 @@ playerdrill= minim.loadFile("Taladro.mp3");
 
 gas2ama = loadImage("gas1.png");
 gas2ver = loadImage("gas2.png");
-fondo = loadImage("Fondo.jpeg");
+fondo = loadImage("Fondo.png");
 menu = loadImage ("menu.jpeg");
 instrucciones = loadImage ("Instruc.png");
 victoria1 = loadImage ("Victoria amarilla.png");
@@ -262,12 +262,12 @@ void playGame () {
     player2.mute();
     fill (182, 6, 6);
     rect (m4, u4, t4, e4);
-    image (mute, 985, 55);
+    image (mute, 1015, 55);
   } else {
     player2.unmute();
     fill (100, 30, 22);
     rect (m4, u4, t4, e4);
-    image (sound, 985, 55);
+    image (sound, 1015, 55);
   }
   
   
@@ -404,19 +404,19 @@ void instruccion() {
   rect (e, f, g, i);
   fill (255);
   textFont(juego);
-  text ("IR AL JUEGO", 815, 70);
+  text ("IR AL JUEGO", 810, 50);
   if (botonmute2) {
     player3.mute();
     if(gameState=="INSTRUCCION"){
     fill (182, 6, 6);
     rect (m2, u2, t2, e2);
-    image (mute, 985, 55);}
+    image (mute, 985, 35);}
   } else {
     player3.unmute();
     if(gameState=="INSTRUCCION"){
     fill (100, 30, 22);
     rect (m2, u2, t2, e2);
-    image (sound, 985, 55);}
+    image (sound, 985, 35);}
   }
   }
   
@@ -435,7 +435,7 @@ void instruccion() {
 }
 
 void creditos() {
-  background(0);
+  image(fondo, 0, 0);
   aparecerysubir();
   player3.play();
   if (botonvolver) {
