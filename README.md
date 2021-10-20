@@ -1,5 +1,5 @@
 # ¡Bienvenido a Drill Battle!  
-![Portada](https://github.com/Computer-Programming-I-UIS/game-drill-battle/blob/8ceb1f390f2337fe982fbc4b9c3c63d2d370e511/Imagenes/WhatsApp%20Image%202021-10-07%20at%209.23.24%20PM.jpeg)
+![Portada](https://github.com/Computer-Programming-I-UIS/game-drill-battle/blob/3430c61026c5a5e1870c6c06c7542eb4f904d263/Imagenes/Banner.png)
 ### ¿Qué es Drill Battle?
 Drill Battle es un juego para dos jugadores en el cual debes usar tu agilidad y razonamiento para ir excavando el mapa y dominar la mayor parte del territorio. Drill Battle nace de la mente de dos estudiantes universitarios estresados y agobiados por el extenuante semestre que cursan, es allí donde idean un juego en el que ambos puedan competir para ver quien es **el rey de los taladros**.
 ### ¿Qué necesito para jugar Drill Battle?
