@@ -15,7 +15,7 @@ Drill Battle tiene un funcionamiento bastante sencillo:
 - Para mover el segundo drill (o green Drill) debes pulsar las teclas de movimiento w,a,s,d, entendiendo la lógica de que W te mueve hacia arriba, S te mueve hacia abajo, A te mueve hacia la izquierda y D te mueve hacia la derecha.
 - Para poder acceder a las funciones de excavación deberás recoger los galones de gasolinas correspondientes al color de tu taladro, si recoges uno del color contrario no podrás moverte por el mapa libremente.
 - La duración de la función excavación es de 10 segundos, por lo que si se pasa el tiempo tendrás que volver a recoger el galón correspondiente.
-- El juego termina cuando uno de los dos jugadores llegue a 150 puntos.
+- El juego termina cuando uno de los dos jugadores llegue a 100 puntos.
 
 ### ¿En qué se inspiró el juego?
 El juego está inspirado en el videojuego clásico Digger, pero adaptado a otra forma de juego, quitando el modo de juego individual y convirtiéndolo en un juego para dos personas.    
@@ -36,7 +36,7 @@ Drill Battle es un juego para todas las edades, desarrollado para ser jugado por
 ![Clasificacion](https://github.com/Computer-Programming-I-UIS/game-drill-battle/blob/8ceb1f390f2337fe982fbc4b9c3c63d2d370e511/Imagenes/descarga.png)
 
 ### ¿Quiénes son los desarrolladores del juego?
-Este juego fue ideado y desarrollado por los estudiantes Christian Camilo Ellis Jiménez y Jose Feliz Algarín Cotes.
+Este juego fue ideado y desarrollado por los estudiantes Christian Camilo Ellis Jiménez y José Félix Algarín Cotes.
 
 ### Capturas del juego  
 ![Inicio](https://github.com/Computer-Programming-I-UIS/game-drill-battle/blob/91fe028e8c9595f755b5ce04502f00c7b65dacb8/Imagenes/Captura%20de%20pantalla%202021-10-07%20231753.png)  
