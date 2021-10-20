@@ -39,8 +39,9 @@ Drill Battle es un juego para todas las edades, desarrollado para ser jugado por
 Este juego fue ideado y desarrollado por los estudiantes Christian Camilo Ellis Jiménez y Jose Feliz Algarín Cotes.
 
 ### Capturas del juego  
-![Inicio](https://github.com/Computer-Programming-I-UIS/game-drill-battle/blob/8ceb1f390f2337fe982fbc4b9c3c63d2d370e511/Imagenes/Captura%20de%20pantalla%202021-10-07%20231753.png)  
+![Inicio](https://github.com/Computer-Programming-I-UIS/game-drill-battle/blob/91fe028e8c9595f755b5ce04502f00c7b65dacb8/Imagenes/Captura%20de%20pantalla%202021-10-07%20231753.png)  
 ![ingame](https://github.com/Computer-Programming-I-UIS/game-drill-battle/blob/8ceb1f390f2337fe982fbc4b9c3c63d2d370e511/Imagenes/Captura%20de%20pantalla%202021-10-07%20232047.png)  
+![Creditos](https://github.com/Computer-Programming-I-UIS/game-drill-battle/blob/91fe028e8c9595f755b5ce04502f00c7b65dacb8/Imagenes/Captura%20de%20pantalla%202021-10-19%20205603.png)  
 
  **Te agradecemos por llegar hasta este punto, esperamos puedas disfrutar de la experiencia del juego y lo compartas con tus amigos.**
 
